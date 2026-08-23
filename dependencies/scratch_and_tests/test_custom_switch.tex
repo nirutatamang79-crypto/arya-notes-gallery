@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{circuitikz}
+\begin{document}
+\begin{center}
+\begin{circuitikz}[american]
+  \draw (0,0) to[V, v<=$10\text{ V}$] (0,2) -- (1,2);
+  % Custom beautiful switch
+  \draw (1,2) node[circle, fill, inner sep=1.2pt]{};
+  \draw (2,2) node[circle, fill, inner sep=1.2pt]{} -- (3,2);
+  \draw[thick] (1,2) -- (1.8, 2.5);
+  \draw[->, >=stealth] (1.5, 2.6) to[bend left=30] (1.7, 2.1);
+  \node[above] at (1.5, 2.7) {$t=0$};
+\end{circuitikz}
+\end{center}
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+  \draw (0,0) to[isource, l=$5\text{ A}$] (0,3)
+        -- (2,3) to[R, l=$2\,\Omega$] (5,3)
+        -- (5,0) to[R, l=$1\,\Omega$] (5,0);
+  \draw (2,3) to[R, l=$3\,\Omega$] (2,0);
+  \draw (0,0) -- (5,0);
+\end{circuitikz}
+\end{center}
+\end{document}

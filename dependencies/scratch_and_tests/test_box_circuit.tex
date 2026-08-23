@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{circuitikz}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\tcbuselibrary{skins,breakable}
+
+\definecolor{primaryblue}{RGB}{20, 50, 110}
+\definecolor{accentteal}{RGB}{0, 128, 128}
+\definecolor{boxbg}{RGB}{245, 248, 252}
+\definecolor{alertred}{RGB}{180, 40, 40}
+
+\newtcolorbox{questionbox}[1]{
+  colback=boxbg,
+  colframe=primaryblue,
+  fonttitle=\bfseries\sffamily,
+  title={#1},
+  arc=3mm,
+  boxrule=1.2pt,
+  breakable
+}
+
+\newtcolorbox{answerbox}[1][]{
+  colback=green!5!white,
+  colframe=green!50!black,
+  fonttitle=\bfseries\sffamily,
+  title={Final Result},
+  arc=2mm,
+  boxrule=1pt,
+  #1
+}
+
+\begin{document}
+\section{Test Section}
+\begin{questionbox}{2083 Baishakh --- Question 1}
+Find the current in 10 V source using nodal analysis.
+\begin{center}
+\begin{circuitikz}[american, scale=1.1, transform shape]
+  % Ground rail
+  \draw (0,0) node[ground]{} -- (6,0);
+  % Nodes
+  \draw (0,0) to[R, l=$2\,\Omega$, i>_=$i$] (0,2.5) node[left]{$v_1$}
+        to[V, v<=$10\text{ V}$] (3,2.5) node[above]{$v_2$}
+        to[cV, v^<=$5i$] (6,2.5) node[right]{$v_3$}
+        to[R, l=$3\,\Omega$] (6,0);
+  \draw (3,2.5) to[R, l=$4\,\Omega$] (3,0);
+  \draw (0,2.5) -- (0,3.8) to[R, l=$6\,\Omega$] (6,3.8) -- (6,2.5);
+\end{circuitikz}
+\end{center}
+\end{questionbox}
+\end{document}

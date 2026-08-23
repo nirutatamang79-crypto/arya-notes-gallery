@@ -1,0 +1,11 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+Test compilation:
+\begin{circuitikz}[american]
+  \draw (0,0) to[V, v=$10\text{ V}$] (0,2) to[R, l=$2\,\Omega$] (2,2) to[L, l=$1\text{ H}$] (4,2) to[C, l=$1\text{ F}$] (4,0) -- (0,0);
+\end{circuitikz}
+\end{document}
