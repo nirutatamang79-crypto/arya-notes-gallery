@@ -1,0 +1,250 @@
+--- PAGE 1 ---
+: |
+|
+|
+
+TRIBHUVAN UNIVERSITY Ean. Back (New Course)
+INSTITUTE OF ENGINEERING Level | BE | FullMarks {60
+Examination Control Division | Programme | BEI,BCT —_| Pass Marks | 24 |
+2083 Baishakh Year/Part [i/M | Time | 3 hs.
+- ; . ' _ Subject: - Electrical Circuit and Machines (ENEE 154)
+Y Candidates are required to give their answers in their own words as far as practicable. |
+¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks. - |
+Y Assume suitable data if necessary.
+‘ |
+1. Find the current in 10V sources using nodal analysis. [6]
+62
+a + |: anes |
+BO . Sid |
+: i 282 im a2 j 3a
+2. Obtain the value of ij, iz, di/dt, dip/dt at t=0", if the switch is closed at t = 0 in the circuit
+shown. [5]
+“& 40 ohm |
+[ YX Ty oN ]
+ww) L |
+age C " / 40 ohm Cm) 1F |
+3. Derive the expression of current in series RC circuit excited by exponential voltage |
+source by using classical method. (6)
+4. In the given circuit, switch is opened at t=0. Find the current and voltage across inductor |
+using Laplace transform method. [6] |
+zo |
+Os ile)
+Av Ts Ln
+5. What is network function? Plot Asymptotic Bode graph of given transfer function. [7]
+
+
+--- PAGE 2 ---
+10(s’+8s+15)
+3) ==
+H(s) s’(s+3) (0.05s+1)
+6. Find z parameter for given two port network and state whether network is symmetrical or
+Teciprocal. [6]
+I I
+1 3 100 2
++ +
+Vy 202 20Q = V2
+7. List out features of ideal transformer. Show that main magnetic flux in the transformer
+Core is independent of load current. [5]
+8. A shunt generator supplies 96 A at a terminal voltage of 200 V. The armature and shunt
+field resistance are 0.1 ohm and 50 ohm. The iron and frictional losses are 2500 W. Find
+a) emf generated, b) commercial efficiency. [5]
+9. A three-phase induction motor is wound for 4 poles and supplied from 50 Hz supply
+system. Calculate; (a) the speed of motor when the slip is 5% (b) the rotor emf frequency
+when the motor runs at 600 rpm. [5]
+10. Briefly explain (Any Three) [3x3]
+a) Series and parallel magnetic circuit
+b) Universal motor
+c) DC motor starter
+d) Voltage regulation of transformer
+AK
+
+
+--- PAGE 3 ---
+TRIBHUVAN UNIVERSITY (Exam. Regular (New Course) |
+~ INSTITUTE OF ENGINEERING | Level | BE | Full Marks | 60 i
+_ Examination Control Division | Programme  BEI,BCT | Pass Marks 24
+Subject: - Electrical Circuit and Machines (ENEE 154)
+v Candidates are required to give their answers in their own words as far as practicable.
+v¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+v Assume suitable data if necessary.
+1. Find the current Ix and power delivered by the dependent voltage source in the circuit
+shpwn below using Mesh Analysis. [6]
+50 ‘
+wov ‘| “e
+0s
+101, © ha 500 250
+2. Explain the behavior of inductor when subjected to switching. In the network, the switch
+is ppened at t = 0. Calculate v, dv/dt and d’v/dt? at t= 0+ if] = 2A, R = 200Q and L=1H.
+Given that v is the voltage across inductor. [1+4]
+i
+I =a
+K gino S
+3. Derive the differential equation of series RLC circuit when excited by step voltage and
+discuss the different cases of circuit responses. [6]
+4. Inthe circuit shown switch is changed from position a to position b at t = 0. Determine ;
+the current i(t) using Laplace transform method. [6]
+Sr a
+ns OH
+| ONIN
+; ba e=9 tle)
+Lov _ L
+[ 7 LOWE
+/ 5. Define two port network. For the given network, find Z parameters, [5]
+3a 10 a
+ke
+2
+-~pa
+
+
+--- PAGE 4 ---
+6. Define poles and zeros of network function. Construct the asymptotic magnitude bode
+plot and phase plot for given transfer function. [1+7]
+100(s+5)
+TS) = Saye ony
+s?(s2+215+20)
+7. State the role of commutator and carbon brushes in DC machine. Explain the
+characteristics of DC generators. [5]
+8. A dircular ring of magnetic material has a mean length of 0.5 m, cross sectional area of
+100 cm”, an air gap of 4 mm. Calculate the MMF required to produce flux of 2 mwb in
+thelair gap, if ring is wound with a coil of 200 turns. Take relative permeability of 800. [5]
+9. A 50 kVA single phase transformer has an iron loss of 700 W and a full load copper loss
+of 1800 W. Calculate the copper losses, iron losses, output power and efficiency of
+transformer at 0.8 power factor lagging when secondary is 25% overloaded. [5]
+10. Justify and explain (Any Three) [3x3]
+a) |Speed of three phase induction motor is always less than synchronous speed
+b) |Iron losses of transformer is independent of load
+c) |DC motor draws high starting current when switched on directly
+d) |Single phase induction motor has two stator winding
+EK
+
+
+--- PAGE 5 ---
+TRIBHUVAN UNIVERSITY ee Back (New Course)
+INSTITUTE OF ENGINEERING [Level 0 BE FullMarks 60
+Examination Control Division [Programme | BEL BCT | Pass Marks | 24 |
+2082 Baishakh | Year/Part [1/0 | Time | 3 hrs. |
+; a Subject: - Electrical Circuits and Machines (EE 154)
+Y Candidates are required to give their answers in their own words as far as practicable.
+¥Y Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. In the given circuit, determine Vx and power consumed by it using mesh analysis and
+solve by matrix method. [6]
+, 20
+WAC)
+VyLogp 5Q
+2. In the network shown below, the switch has been in position a for long time. At t = 0, it is
+suddenly thrown off to position b. Find current through each element,
+ce of coil and a of capacitor at t = 0*. [5]
+t=0
+a b 22 40
+12V
+62 3H
+2F
+3. ADC source of 100 V is suddenly applied at time t = 0 to a series RLC circuit comprising
+R = 2Q, L= 0.5 H and C = 1F. Obtain the expression for current in the circuit by using
+classical method. [6]
+. Or 20° OSH
+4, Anexponential voltage V(t) = 20e“' is suddenly applied at time t = 0 to series RLC circuit
+comprising R = 2Q, L= 0.5H and C = 1F. Obtain the expression for the current i(t) in the
+circuit using Laplace method. [6]
+
+
+--- PAGE 6 ---
+5. Sketch the asymptotic bode plot for the transfer function given by {8]
+. 100s (s +5)
+(s+1)(s* +10s +100)
+6. Find the expression of hybrid parameters in terms of Z parameters. Derive the equivalent
+T parameters of two cascade connected two port networks. [3+3]
+7. The following test results were obtained on 20 kVA, 2200/220 V, 50 Hz, single phase
+transformer. [5]
+O.C test: 220 V, 1.1 A, 125W (OnLV side)
+S.C test: 52.7 V, 8.4A, 287W (On HV side)
+Calculate the equivalent circuit parameters referred to secondary side.
+8. Explain the production torque in DC motor with necessary mathematical explanation and
+derivation. What are the role of back emf in DC motor? . [4+2]
+9. How does three phase induction motor start? Why speed of this motor never reaches
+synchronous speed? [6]
+10. Write notes on: (Any Two) : ; . [2x3]
+a) Magnetization of magnetic material
+b) Auto transformer and its application
+c) Stepper motor .
+28 9 2
+
+
+--- PAGE 7 ---
+/
+J t»
+TRIBHUVAN UNIVERSITY (Exam. Regular (New Course aut pai)
+INSTITUTE OF ENGINEERING Level [BE ullaris |
+
+Examination Control Division | Programme | BEL BCT _| Pass Marks | 24 |
+
+2081 Ashwin [Year/Part |i/il | Time | Shs. |
+- _ _ Subject: - Electrical Circuits and Machines (EE 154) |
+Y Candidates are required to give their answers in their own words as far as practicable.
+¥ Attempt All questions. ;
+v The figures in the margin indicate Full Marks,
+v Assume suitable data if necessary. H
+1. Using Nodal analysis and matrix solution method, find Vx and the current in 2 ohm resistance. [6]
+| CH —~ bad i
+Sy vy
+| {
+| a FD Ban |
+| |
+| 2. Obtain the value of ij, iz, dij/dt, diz/dt at t = 0°, if the switch is closed at t = 0 in the circuit
+shown below. 5]
+|
+| '
+| 0 ig 1g ;
+i
+a ai) a, 1F i
+10v |
+|
+| 3. The circuit shown below is in steady state with switch is at position ‘a’. The switch is |
+moved to position ‘b’ at t = 0. Find the expression for V(t) and current through 2H :
+inductor iz (t) for t > 0 using classical method. [6] |
+~ a ob
+| 2 psd [
+4v T an 4, on " |
+i
+4. The switch in the figure below has been in position ‘a’ for a long time. Then, it is moved |
+to ‘b’ at t= 0. Obtain the expression for voltage across capacitor for t>0 using Laplace i
+transform method. [6] |
+
+
+--- PAGE 8 ---
+|
+|
+| 22 | 0
+. b
+: 19 ‘
+6Vv 1F
+a 30sH
+5. Plot asymptotic Bode graph of given transfer function. [7]
+500(s+2)
+G(s) = =
+s(s +15s+121)
+6. Find the expression of Z parameters in terms of ABCD parameters. For given two port
+networks, find ABCD parameters, [2+4]
+. 8a q
++ kal - seneeien on ae
+t g f
+vy O51, 50 V2
+7. Explain operation of transformer at loaded condition and Prove that main flux in the core
+of transformer at any loading condition is constant. [6]
+8. A 240 V de shunt motor has armature winding resistance of 0.4 Q and field winding
+resistance of 120 Q. It draws a current of 30A at half load and the Corresponding speed is
+1400 rpm. If a resistance of 1.2 Q is connected in Series with the armature winding and
+load torque is decreased by 20%. Calculate the new speed, [6]
+9. Explain the Torque-speed characteristics of three phase induction motor with the help of
+Proper mathematics and graph. [6]
+10. Write short notes on (Any Two) [2x3]
+a) Role of commutator and carbon brush in de machine
+b) Hysteresis and eddy current power losses
+©) Stepper motor
+RE
+
+

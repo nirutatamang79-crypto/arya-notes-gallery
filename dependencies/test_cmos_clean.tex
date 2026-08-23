@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\begin{document}
+
+\begin{circuitikz}[scale=1.0]
+  % VDD Rail
+  \draw (-2,4.5) node[above] {{DD}$} to[short, o-] (2,4.5);
+  
+  % PMOS 1 and 2 in parallel
+  \draw (-1.2,4.5) to[short] (-1.2,4.0) node[pmos, anchor=S] (p1) {};
+  \draw (1.2,4.5) to[short] (1.2,4.0) node[pmos, anchor=S, xscale=-1] (p2) {};
+  
+  % Connect Drains of PMOS
+  \draw (p1.D) -- (-1.2,2.0) -- (1.2,2.0) -- (p2.D);
+  \draw (0,2.0) to[short, *-o] (2.8,2.0) node[right] { = \overline{A \cdot B}$};
+  
+  % NMOS 1 and 2 in series
+  \draw (0,2.0) -- (0,1.5) node[nmos, anchor=D] (n1) {};
+  \draw (n1.S) -- (0,0.0) node[nmos, anchor=D] (n2) {};
+  \draw (n2.S) -- (0,-0.8) node[ground] {};
+  
+  % Inputs A and B
+  \draw (p1.G) -- (-2.2, 3.4) node[left] {$};
+  \draw (-1.8, 3.4) to[short, *-] (-1.8, 0.9) -- (n1.G);
+  
+  \draw (p2.G) -- (2.2, 3.4) -- (2.2, 3.8) -- (-2.8, 3.8) node[left] {$} -- (-2.8, -0.6) -- (n2.G);
+\end{circuitikz}
+
+\end{document}

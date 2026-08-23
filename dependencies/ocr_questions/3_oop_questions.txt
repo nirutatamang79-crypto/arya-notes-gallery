@@ -1,0 +1,161 @@
+--- PAGE 1 ---
+TRIBHUVAN UNIVERSITY Exam.
+INSTITUTE OF ENGINEERING [Level —iBE. Full Marks 60_
+Examination Control Division | Programme BEI, BCT Pass Marks 24
+2083 Baishakh [Yeor/Part 1/il Time 3s)
+——— Subject: - Object Oriented Programming (ENCT ISI)
+y Candidates are required to give their answers in their own words as far as practicable.
+, Attempt All questions,
+A The Figures in the margin indicate Full Marks.
+Assume suitable data if necessary.
+1. What are the advantages of object oriented programming? Differentiate between
+Procedural oriented programming and object oriented programming. [2+2]
+2. When do we use default argument in functions? When can conflict occur when default
+argument and function overloading are used together? Create a C++ program to illustrate
+the concept of default arguments. Define a function named printMessage that takes two
+parameters: a message and a count. The function should print the string for count number
+of times. Set the default value of count to 1. [1+2+4]
+3. What do you mean by a constructor? Explain with example types of constructors in C++.
+Create a class person with data members name, age, address and citizenship_number.
+Define constructor to initialize the value of the person. Assign citizenship number if the
+age of the person is greater than 16 otherwise assign value zero to citizenship number.
+Also create a function to display the values. [1+4+4]
+4. Explain different ways of how binary operator overloading is performed? Using a class to
+model a 3x3 matrix, overload the + and- operator to add and subtract two matrices. [3+4]
+5. What is the difference between private and protected access specifier? Define function
+overriding. Write a program with a class to represent cricketer that has data members to
+Tepresent name, age and number of matches played. From this class derive two classes
+bowler and batsman. The bowler class should have number of wickets as data member
+and batsman class should have number of runs and number of centuries as data members.
+Implement the concept of function overriding in your program and also mention the type
+of inheritance involved in the program. [2+1+4]
+6. Why do you need virtual destructor? Distinguish between function overloading and
+overriding with example. (1+4]
+7. Explain how abnormal situations are handled in I/O process. Write a program that writes
+text to source file after reading from the user. Copy the content from source file, change
+the case of letters to uppercase if they are in lowercase and then store in destination file.
+Also, display the content of destination file too. [3+5]
+8. Why are templates in C++ referred to as a form of generic programming? What are
+containers and iterators in STL? Briefly explain default arguments with Class Template
+with suitable example. [2+2+4]
+9. How is explain exception handling mechanism in C++ better than tradition techniques?
+Write a program to read name, roll number and marks that catches multiple exceptions
+using exception class if roll number is negative and marks greater than full marks. Also,
+handle the exceptions. : [2+3]
+aK kK
+
+
+--- PAGE 2 ---
+Examination Control Division | Programme BCT, BEI Pass Marks 24 _
+2082 Bhadra [Year/Part 1/0 Time | 3 hrs.
+¥ Candidates are required to give their answers in their own words as Jar as practicable.
+¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. What is the drawback of procedural programming and advantage of object-oriented
+programming along with suitable program code of each? (2+2]
+2. What do you mean by Namespace? Why namespace feature is needed in C++? Explain
+with jan example program. [1+2+4]
+3. Explain with example how object can be passed or returned from functions. In which
+condition can a class be made friend? How can we make a specific member function of a
+class|a friend function? With a complete example show the both of these cases of friend
+class|and friend function of another class. ; (3+1+1+4]
+4. What is an operator overloading? Write down the syntax for overloading binary operator
+using non-member operator function in a class. Write a program to perform addition,
+subtraction, multiplication and division with complex objects with real and imaginary
+members. [1+2+4]
+5. Explain different forms of inheritance with an example for each. Create a class person
+with |data members to identify a person and inherit it to. create a class student with
+appropriate members. Write a complete program showing function overriding to make
+your program meaningful. [3+4]
+; 6. Discuss about late binding and early binding. Write a program to create a classes
+Employee. Now create a class manager which is derived from employee. Show the use of
+virtual function with suitable data members and member functions. [2+3]
+7. What are the different types of file modes used in C’*? Write a program with a class to
+represent an employee having data members to represent name, employee Id, age and
+salary. Add record of 10 employees in a file and display them in a console. Also search a
+specific record of an employee using employee Id as a key from the user input. [2+6]
+8. Show with an example how do we eliminate code redundancy using template. Give with
+example. WAP to read n numbers of any types and sort them on descending order. For
+sorting, you can use vector member function. [4+4]
+9. Explgin exception along with their handling constructs. Develop a C** program that
+shows multiple exception handling scenarios. [2+3]
+3
+
+
+--- PAGE 3 ---
+TRIBHUVAN UNIVERSITY Pe Back (New Course)
+INSTITUTE OF ENGINEERING jLevel = | BE | FullMarks 60
+Examination Control Division | Programme | BCT, BEL Pass Marks 24
+2082 Baishakh [Year/Part [1/0 [Time [3s
+_____ Subject: - Object Oriented Programming (CT 151)
+v Candidates are required to give their answers in their own words as far as practicable.
+Y Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+VY Assume suitable data if necessary.
+1, Compare procedure oriented programming and object-oriented programming. Explain the
+basic concept of object oriented programming. [2+2]
+2. When should you prefer the use of inline function? Explain with example. Explain
+function overloading in object-oriented programming. (3+4]
+3. Write about different types constructors with respective syntaxes. In which condition can
+a class be made friend? WAP to create a class information to store the name and address
+of students. Store the information of two students and swap the values of these objects. [3+2+4]
+4. What are the rules for operator overloading? Write a program to create a class “time”
+with data members — hour, minute and seconds and then overload post increment operator
+for increment in seconds. (2+5]
+5. Define inheritance in OOP. Give a suitable example to show how function overriding
+differ from function overloading? Write a.program to show constructor invocation order
+in multilevel inheritance. [1+3+3]
+6. What is virtual function? Define pure virtual function with suitable example. [1+4]
+7. How random access of data in file can be handled? Write a program to store name,
+roll_no, address and batch of ‘n’ students in a file. Also add a feature to search the student
+information by roll_no. [2+6]
+8. “Templates in C++ enable generic programming, allowing the creation of reusable
+functions and classes that work with different data types within a single framework”.
+Give example to justify the given statement. [4+4]
+9. What are exceptions in a program? Write a meaningful program that can handle multiple
+exceptions. [1+4]
+a8 KK
+
+
+--- PAGE 4 ---
+TRIBHUVAN UNIVERSITY [Exam Regular (New Course -2080 Batch)
+INSTITUTE OF ENGINEERING jLevel___: BE on El Marks | 60
+Examination Control Division | Programme BCT,BEI _PassMarks 24
+2081 Ashwin [Year/Part 1/M Time 3 hrs.
+Y Candidates are required to give their answers in their own words as far as practicable.
+v¥ Attempt All questions.
+v The figures in the margin indicate Full Marks.
+v¥ Assume suitable data if necessary.
+1. What are the benefits of object-oriented programming? Describe the feature of object-
+oriented programming. [2+2]
+2. Define reference variable and write syntax for defining reference variable. WAP a
+function which calculates A where A = P(1+ =)" for data p, r and n. But for some
+cases value of r is fix that is 50. Call this function in main. [2+5]
+3. Explain friend function and with program code, how friend function can be used to make
+bridge between two classes? Create a class time, constructor having hour, minutes and
+second as arguments is used to initialize time objects. The add function that takes two
+class objects as arguments add them respectively then display the aggregate result. (Apply
+60 seconds = Iminute, 60 minutes = 1 hour and 24 hour = 1 day). (2+3+4]
+4. How is operator overloading used in case of binary operator? List down the rules of
+operator overloading. Create a class Length that has two data members meter and
+centimeter. Write a program to compare the length of two objects of this class by
+overloading ‘>’ operator. Use constructor to initialize data members. [1+2+4]
+5, What is IS-A relation and HAS-A relationship? What do you mean by multipath
+inheritance? Explain how ambiguity due to multipath inheritance could be resolved. [2+2+3]
+6. What do you mean by abstract class? WAP to create two classes employee and student.
+Now create a class manager which is derived from two base classes employee and student
+and a class secretary derived from employee. Show the use of virtual destructor. [1+4]
+7. Explain different types of file access. Write a program for library to store information of
+different books (as least 5 items) in a file and display them on console. [3+5]
+8. Explain the use of default argument in template class. Write to suitable program to show
+the concept of function template. Explain in brief about stack in Standard Template
+Library. [3+3+2]
+9. Discuss steps taken during exception handling. Write a program to compute square root
+of a number. The input value must be tested for validity. If it is negative, an exception :
+must be raised. (2+3] ,
+| #KK
+|
+|
+
+

@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{shapes.gates.logic.US,positioning,calc,automata,arrows.meta}
+\begin{document}
+\begin{circuitikz}[scale=0.8]
+  \draw (0,0) node[nmos] (n1) {};
+  \draw (0,2) node[pmos] (p1) {};
+  \draw (p1.source) node[above] {{DD}$};
+  \draw (n1.source) node[ground] {};
+\end{circuitikz}
+\end{document}

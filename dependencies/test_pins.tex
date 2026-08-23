@@ -1,0 +1,11 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+  \draw (0,2) node[pmos] (p1) {};
+  \draw (p1.S) node[above] {S};
+  \draw (p1.D) node[below] {D};
+  \draw (p1.G) node[left] {G};
+\end{circuitikz}
+\end{document}

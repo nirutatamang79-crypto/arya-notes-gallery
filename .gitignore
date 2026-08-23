@@ -3,4 +3,12 @@
 *.log
 *.out
 *.toc
+__pycache__/
+*.pyc
+dependencies/__pycache__/
 dependencies/circuit_standalone_tmp/
+.vscode/
+.idea/
+requests.log
+server.log
+

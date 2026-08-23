@@ -3,113 +3,408 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>IOE Engineering PDF Resource Portal — Tribhuvan University</title>
-  <meta name="description" content="Minimalist, fast PDF download portal for IOE BE Computer and Electronics Engineering (Semester I/II) covering Mathematics, Digital Logic, OOP, Circuits & Machines, EDC, and Chemistry.">
+  <title>Arya's Notes Gallery — Tribhuvan University</title>
+  <meta name="description" content="Arya's Notes Gallery: Minimalist, fast PDF download portal and live BCT exam countdown timer for IOE BE Computer and Electronics Engineering.">
   
-  <!-- Minimalist Black & White Stylesheet -->
+  <!-- Minimalist Black & White Stylesheet with iPhone-style haptics, Audio Engine & Accent Tokens -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Mozilla PDF.js In-Browser Native Document Renderer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
+
+  <!-- 5-Second Animated Loading Screen -->
+  <div class="app-loader-screen" id="app-loader-screen">
+    <div class="loader-inner">
+      <!-- Portrait Illustration Avatar -->
+      <div class="loader-avatar-frame">
+        <img src="assets/arya_avatar.jpg" alt="Arya Lamsal Portrait" class="loader-avatar-img" />
+      </div>
+
+      <div class="loader-title-group">
+        <h1 class="loader-title">Arya's Notes Gallery</h1>
+        <p class="loader-subtitle mono">Roll No: 004 · Arya Lamsal</p>
+      </div>
+
+      <!-- Live Progress Bar -->
+      <div class="loader-progress-track">
+        <div class="loader-progress-bar" id="loader-progress-bar"></div>
+      </div>
+
+      <!-- Live Status & Percentage -->
+      <div class="loader-meta-row mono">
+        <span class="loader-status" id="loader-status-text">Initializing study protocol...</span>
+        <span class="loader-percent" id="loader-percent-text">0%</span>
+      </div>
+
+      <!-- Countdown Chip -->
+      <div class="loader-countdown mono">
+        <span>Launching in <strong id="loader-seconds">5s</strong></span>
+      </div>
+    </div>
+  </div>
 
   <!-- Top Navigation Header -->
   <header class="portal-header">
     <div class="header-brand-block">
-      <span class="portal-title">IOE Engineering Resource Portal</span>
-      <span class="portal-subtitle">Tribhuvan University · BE Computer & Electronics</span>
+      <div class="brand-title-row">
+        <span class="portal-title">Arya's Notes Gallery</span>
+        <span class="active-users-pill mono" id="active-users-pill" title="Current active users on portal">
+          <span class="pulse-green-dot"></span>
+          <span id="active-users-count">9 online</span>
+        </span>
+        <button class="visitors-pill mono" id="unique-visitors-btn" onclick="openVisitorsModal()" title="View total unique people who visited">
+          <span class="users-icon">👥</span>
+          <span id="unique-visitors-pill-count">... unique people</span>
+        </button>
+      </div>
+      <span class="portal-subtitle">Roll No: 004 · Arya Lamsal</span>
     </div>
 
+    <!-- Header Action Controls -->
     <div class="header-controls">
-      <button class="btn-pill" id="theme-toggle-btn" title="Toggle Dark/Light Mode (T)">
-        <span id="theme-toggle-text">DARK MODE</span>
+      <!-- Sound FX Toggle -->
+      <button class="btn-pill" id="sound-toggle-btn" title="Toggle Sound Effects">
+        <span class="mono" id="sound-toggle-text">SFX: ON</span>
+      </button>
+
+      <!-- Scroll to Timer Shortcut -->
+      <a href="#exam-timer-section" class="btn-pill" title="Jump to BCT Exam Countdown Timer">
+        <span class="mono">TIMERS</span>
+      </a>
+
+      <!-- Reviews Section Shortcut -->
+      <button class="btn-pill" id="header-reviews-btn" onclick="openLeaveReviewModal()" title="Leave a review or see student ratings">
+        <span class="mono" id="header-reviews-text">★ REVIEWS</span>
+      </button>
+
+      <!-- Surprise Me / Random Pick -->
+      <button class="btn-pill" id="surprise-me-btn" title="Pick a random subject to study">
+        <span class="mono">RANDOM</span>
+      </button>
+
+      <!-- Theme Switcher (Light / Dark) -->
+      <button class="btn-pill" id="theme-toggle-btn" title="Toggle Light/Dark Theme (T)">
+        <span id="theme-toggle-text" class="mono">DARK</span>
       </button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="portal-hero">
-    <div class="hero-inner">
-      <span class="hero-tag">BE First Year / Second Semester</span>
-      <h1 class="hero-heading">Official Study Packets & Solutions</h1>
-      <p class="hero-description">
-        Download verified past paper solutions, comprehensive study packets, and syllabus blueprints for all core engineering subjects.
-      </p>
-
-      <!-- Live Search Box -->
-      <div class="search-container">
-        <div class="search-box">
-          <span class="mono" style="font-weight: 700;">⌕</span>
-          <input type="text" id="search-input" class="search-input" placeholder="Search subjects by name, course code, or topic..." autocomplete="off" />
-          <span class="search-shortcut-hint">/</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Subject Grid -->
+  <!-- Main Content Container -->
   <main class="main-content">
+
+    <!-- Section Title & Filter Row -->
     <div class="section-title-row">
-      <h2 class="section-heading">Core Engineering Subject Slots</h2>
-      <span class="slots-count-tag" id="slots-count">6 SUBJECTS AVAILABLE</span>
+      <div class="section-left">
+        <h2 class="section-heading">Subjects</h2>
+        <span class="slots-count-tag" id="slots-count">6 SUBJECTS</span>
+      </div>
+
+      <!-- Quick Inline Filter Bar -->
+      <div class="quick-filter-wrapper">
+        <input type="text" id="quick-filter-input" class="quick-filter-input mono" placeholder="Filter subjects (or press /)..." autocomplete="off" />
+      </div>
     </div>
 
     <!-- 6 Subject Slots Container -->
     <div class="subject-grid" id="subject-grid">
-      <!-- Injected via app.js -->
+      <!-- Dynamically Injected via app.js -->
     </div>
+
+    <!-- =========================================================================
+         BCT Exam Countdown Timer (At Bottom)
+         ========================================================================= -->
+    <section class="exam-timer-section" id="exam-timer-section">
+      
+      <!-- Section Header -->
+      <div class="timer-section-header">
+        <div class="timer-title-group">
+          <div class="timer-badge-row">
+            <span class="live-dot"></span>
+            <span class="timer-live-clock mono" id="live-clock">Loading Kathmandu Time...</span>
+          </div>
+          <h2 class="timer-main-title">BCT Exam Countdown</h2>
+          <p class="timer-main-subtitle mono">Computer & Electronics · 2083 B.S. (2026 A.D.) · 1:00 PM – 4:00 PM NPT</p>
+        </div>
+
+        <div class="timer-controls-row">
+          <div class="timer-view-toggles">
+            <button class="btn-pill active" id="btn-view-cards" onclick="setTimerView('cards')">CARDS</button>
+            <button class="btn-pill" id="btn-view-table" onclick="setTimerView('table')">TABLE</button>
+            <button class="btn-pill" id="btn-view-timeline" onclick="setTimerView('timeline')">TIMELINE</button>
+          </div>
+          <button class="btn-pill" id="export-cal-btn" onclick="exportCalendarSchedule()" title="Download Calendar (.ics)">
+            <span class="mono">EXPORT .ICS</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Spotlight: Next Immediate Target -->
+      <div class="hero-spotlight" id="hero-spotlight">
+        <div class="hero-header">
+          <span class="hero-status-pill" id="hero-status-pill">
+            <span class="live-dot"></span> NEXT TARGET
+          </span>
+          <button class="btn-pill mono" id="hero-focus-btn" onclick="openZenMode()">
+            <span>ZEN FOCUS</span>
+          </button>
+        </div>
+
+        <div class="hero-subject-info">
+          <span class="hero-code-badge mono" id="hero-code">ENSH 151</span>
+          <h3 class="hero-title" id="hero-title">Engineering Mathematics II</h3>
+          <div class="hero-dates-meta mono">
+            <span id="hero-date-bs">2083-05-16 B.S.</span>
+            <span>·</span>
+            <span id="hero-date-ad">September 1, 2026 · 1:00 PM NPT</span>
+          </div>
+        </div>
+
+        <!-- Large Countdown Grid -->
+        <div class="hero-timer-grid mono">
+          <div class="hero-unit-card">
+            <span class="hero-unit-value" id="hero-days">00</span>
+            <span class="hero-unit-label">DAYS</span>
+          </div>
+          <div class="hero-unit-card">
+            <span class="hero-unit-value" id="hero-hours">00</span>
+            <span class="hero-unit-label">HOURS</span>
+          </div>
+          <div class="hero-unit-card">
+            <span class="hero-unit-value" id="hero-mins">00</span>
+            <span class="hero-unit-label">MINS</span>
+          </div>
+          <div class="hero-unit-card">
+            <span class="hero-unit-value" id="hero-secs">00</span>
+            <span class="hero-unit-label">SECS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Schedule Grid / Table / Timeline Container -->
+      <div class="schedule-view-container" id="schedule-view-container">
+        <!-- Injected via app.js -->
+      </div>
+    </section>
+
+    <!-- Student Reviews & Feedback Section -->
+    <section class="reviews-section" id="reviews-section">
+      <div class="section-title-row">
+        <div>
+          <h2 class="section-heading">Student Feedback & Reviews</h2>
+          <p class="section-desc mono" id="reviews-summary-line">⭐ Student Testimonials · Be the first to leave feedback!</p>
+        </div>
+        <div class="reviews-header-actions">
+          <button class="btn-pill active mono" onclick="openLeaveReviewModal()">
+            <span>✍️ LEAVE A REVIEW</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reviews Wall Grid -->
+      <div class="reviews-grid" id="reviews-grid">
+        <!-- Dynamically Injected -->
+      </div>
+    </section>
+
   </main>
 
-  <!-- Ready PDF In-Browser Previewer Modal -->
+  <!-- Interactive Leave Review Modal -->
+  <div class="modal-backdrop" id="review-modal-backdrop">
+    <div class="modal-dialog review-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <span class="modal-title">⭐ Leave a Review</span>
+          <span class="modal-meta-tag mono">STUDENT FEEDBACK</span>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn-pill" onclick="closeLeaveReviewModal()">CLOSE</button>
+        </div>
+      </div>
+      <div class="modal-body review-modal-body">
+        <form id="leave-review-form" onsubmit="handleReviewSubmit(event)" class="review-form">
+          <!-- Interactive Star Rating -->
+          <div class="form-group">
+            <label class="form-label mono">YOUR RATING</label>
+            <div class="star-rating-picker" id="star-rating-picker">
+              <button type="button" class="star-btn active" data-star="1" onclick="setFormRating(1)">★</button>
+              <button type="button" class="star-btn active" data-star="2" onclick="setFormRating(2)">★</button>
+              <button type="button" class="star-btn active" data-star="3" onclick="setFormRating(3)">★</button>
+              <button type="button" class="star-btn active" data-star="4" onclick="setFormRating(4)">★</button>
+              <button type="button" class="star-btn active" data-star="5" onclick="setFormRating(5)">★</button>
+              <span class="star-rating-score mono" id="star-rating-score">5.0 / 5.0 (Awesome!)</span>
+            </div>
+          </div>
+
+          <!-- Name and Roll No -->
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label class="form-label mono" for="review-author-name">YOUR NAME / NICKNAME</label>
+              <input type="text" id="review-author-name" class="form-input mono" placeholder="e.g. Prashant Thapa" maxlength="40" required />
+            </div>
+            <div class="form-group flex-1">
+              <label class="form-label mono" for="review-roll-no">ROLL NO / BATCH (OPTIONAL)</label>
+              <input type="text" id="review-roll-no" class="form-input mono" placeholder="e.g. 023 / BCT 080" maxlength="20" />
+            </div>
+          </div>
+
+          <!-- Subject Tag -->
+          <div class="form-group">
+            <label class="form-label mono" for="review-subject-select">SUBJECT YOU'RE REVIEWING</label>
+            <select id="review-subject-select" class="form-select mono">
+              <option value="General Gallery">⭐ General / Overall Gallery</option>
+              <option value="Electrical Circuits & Machines">⚡ Electrical Circuits & Machines (ECM)</option>
+              <option value="Digital Logic">💾 Digital Logic (DL)</option>
+              <option value="Electronic Devices & Circuits">🔌 Electronic Devices & Circuits (EDC)</option>
+              <option value="Engineering Mathematics II">📐 Engineering Mathematics II</option>
+              <option value="Engineering Chemistry">🧪 Engineering Chemistry</option>
+              <option value="Object Oriented Programming">💻 Object Oriented Programming (OOP)</option>
+            </select>
+          </div>
+
+          <!-- Quick Vibe Tag Chips -->
+          <div class="form-group">
+            <label class="form-label mono">QUICK HIGHLIGHT BADGE</label>
+            <div class="vibe-tags-row mono" id="vibe-tags-row">
+              <button type="button" class="vibe-chip active" onclick="selectVibeTag('⚡ Life Saver')">⚡ Life Saver</button>
+              <button type="button" class="vibe-chip" onclick="selectVibeTag('🎯 100% Accurate')">🎯 100% Accurate</button>
+              <button type="button" class="vibe-chip" onclick="selectVibeTag('🔥 Exam Ready')">🔥 Exam Ready</button>
+              <button type="button" class="vibe-chip" onclick="selectVibeTag('📚 Clean Notes')">📚 Clean Notes</button>
+              <button type="button" class="vibe-chip" onclick="selectVibeTag('✨ Highly Recommended')">✨ Highly Recommended</button>
+            </div>
+          </div>
+
+          <!-- Review Comment -->
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label mono" for="review-comment-text">YOUR FEEDBACK / MESSAGE</label>
+              <span class="char-count mono" id="review-char-count">0 / 500</span>
+            </div>
+            <textarea id="review-comment-text" class="form-textarea mono" rows="4" placeholder="How did Arya's notes help your exam preparation or study routine?" maxlength="500" required oninput="handleReviewCharCount()"></textarea>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-submit-row">
+            <button type="button" class="btn-pill mono" onclick="closeLeaveReviewModal()">CANCEL</button>
+            <button type="submit" class="btn-pill active mono" id="submit-review-btn">
+              <span>SUBMIT REVIEW 🚀</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Continuous In-Browser PDF Document Reader Modal -->
   <div class="modal-backdrop" id="pdf-modal-backdrop">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <span class="modal-title" id="pdf-modal-title">PDF Document Preview</span>
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <a id="modal-download-btn" href="#" class="btn-pill active" download>↓ DOWNLOAD</a>
-          <button class="btn-pill" id="close-pdf-modal-btn">CLOSE ✕</button>
+    <div class="modal-dialog pdf-reader-dialog">
+      <!-- Sleek Compact Single-Row Reader Header -->
+      <div class="modal-header pdf-reader-header">
+        <div class="reader-header-left">
+          <span class="reader-doc-title" id="pdf-modal-title">Document Preview</span>
+          <span class="reader-meta-pill mono" id="pdf-modal-meta">PDF VIEWER</span>
+        </div>
+
+        <div class="reader-header-actions">
+          <!-- Live Sticky Page Position Pill -->
+          <span class="reader-page-counter mono" id="pdf-page-indicator">Page 1 / 1</span>
+
+          <!-- Zoom Controls -->
+          <div class="reader-zoom-group">
+            <button class="btn-icon mono" onclick="zoomPdf(0.2)" title="Zoom In">+</button>
+            <button class="btn-icon mono" onclick="zoomPdf(-0.2)" title="Zoom Out">−</button>
+          </div>
+
+          <!-- Open in Fullscreen / Tab -->
+          <a id="modal-fullscreen-btn" href="#" target="_blank" class="btn-pill btn-compact mono" title="Open in new tab">OPEN ↗</a>
+
+          <!-- Download Master PDF -->
+          <a id="modal-download-btn" href="#" class="btn-pill btn-compact active mono" download>DOWNLOAD</a>
+
+          <!-- Close Modal -->
+          <button class="btn-icon btn-close mono" id="close-pdf-modal-btn" title="Close Preview">✕</button>
         </div>
       </div>
-      <div class="modal-body">
-        <iframe id="pdf-iframe" class="pdf-iframe" src="" title="PDF Document Viewer"></iframe>
+
+      <!-- Continuous Multi-Page Scroll Body -->
+      <div class="modal-body pdf-continuous-body" id="pdf-modal-body">
+        <div class="pdf-loading-spinner mono" id="pdf-loading-spinner">
+          <div class="pulse-green-dot" style="width: 10px; height: 10px; margin: 0 auto 0.75rem;"></div>
+          <span>Loading document into continuous reader...</span>
+        </div>
+
+        <!-- Continuous Vertical Scroll Feed of All Pages -->
+        <div class="pdf-pages-scroll-feed" id="pdf-pages-feed"></div>
+
+        <!-- Fallback frame -->
+        <iframe id="pdf-iframe" class="pdf-iframe" src="" title="PDF Document Viewer" style="display:none;"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- In-Progress Modal: "Arya is solving them right now" -->
-  <div class="modal-backdrop" id="arya-modal-backdrop">
-    <div class="modal-dialog narrow">
+  <!-- Unique Visitors Modal Window -->
+  <div class="modal-backdrop" id="visitors-modal-backdrop">
+    <div class="modal-dialog" style="max-width: 560px; height: auto; max-height: 85vh;">
       <div class="modal-header">
-        <span class="modal-title" style="font-size: 0.8rem;">IN PROGRESS · ARYA IS ON IT</span>
-        <button class="btn-pill" id="close-arya-modal-btn">CLOSE ✕</button>
-      </div>
-      <div class="modal-body padded">
-        <!-- Artwork of Arya solving solutions -->
-        <div class="arya-image-container">
-          <img src="assets/images/arya_solving.jpg" alt="Arya is solving them right now" class="arya-image" />
+        <div class="modal-header-left">
+          <span class="modal-title">👥 Unique People Log</span>
+          <span class="modal-meta-tag mono" id="visitors-modal-total">0 PEOPLE</span>
         </div>
-
-        <h3 class="arya-modal-heading">
-          Arya is solving <span id="arya-modal-subject-title" style="text-decoration: underline;">this subject</span> right now!
-        </h3>
-        
-        <p class="arya-modal-text">
-          Arya is currently busy solving, verifying, and typesetting all past IOE question solutions and circuit diagrams for <strong id="arya-modal-subject-code">this course</strong>. Check back soon for the verified master PDF!
-        </p>
-
-        <div class="arya-modal-actions">
-          <button class="btn-download-primary" id="arya-priority-btn">
-            <span>⚡ REQUEST ARYA'S PRIORITY</span>
-          </button>
-          <button class="btn-preview-secondary" id="arya-modal-close-action-btn">
-            <span>GOT IT, TAKE YOUR TIME!</span>
-          </button>
+        <div class="modal-header-actions">
+          <a href="/analytics/" target="_blank" class="btn-pill mono" title="Open Full Request Inspector">INSPECTOR ↗</a>
+          <button class="btn-pill" onclick="closeVisitorsModal()">CLOSE</button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem; background: var(--bg-surface); overflow-y: auto;">
+        <div class="visitors-stats-banner mono" id="visitors-summary-text" style="padding: 0.75rem 1rem; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-medium); margin-bottom: 1rem; font-size: 0.76rem;">
+          Loading unique visitor metrics...
+        </div>
+        <div class="visitors-modal-list mono" id="visitors-modal-list" style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <!-- Dynamically Injected -->
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Zen Focus Mode Fullscreen Overlay -->
+  <div class="zen-overlay" id="zen-overlay">
+    <button class="zen-exit-btn mono" id="zen-exit-btn" onclick="closeZenMode()">EXIT ZEN (ESC)</button>
+    <div class="zen-content">
+      <span class="zen-code-badge mono" id="zen-code">ENSH 151</span>
+      <h1 class="zen-title" id="zen-title">Engineering Mathematics II</h1>
+      <p class="zen-date mono" id="zen-date">September 1, 2026 · 1:00 PM NPT</p>
+      
+      <div class="zen-timer-grid mono">
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-days">00</span>
+          <span class="zen-lbl">DAYS</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-hours">00</span>
+          <span class="zen-lbl">HOURS</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-mins">00</span>
+          <span class="zen-lbl">MINUTES</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-secs">00</span>
+          <span class="zen-lbl">SECONDS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
 
   <!-- Minimal Footer -->
   <footer class="portal-footer">
-    <p>Institute of Engineering (IOE), Tribhuvan University · Central Reference Resource Portal</p>
+    <div class="footer-inner">
+      <p>Arya's Notes Gallery · Roll No: 004 · Institute of Engineering (IOE), Tribhuvan University</p>
+      <span class="footer-hint mono">Pro-tip: Press <kbd>T</kbd> to switch themes · Press <kbd>Z</kbd> for Zen Focus · <a href="/analytics/" target="_blank" style="text-decoration: underline;">Open Request Inspector ↗</a></span>
+    </div>
   </footer>
 
   <!-- Application Logic -->

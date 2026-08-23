@@ -1,0 +1,141 @@
+--- PAGE 1 ---
+TRIBHUVAN UNIVERSITY Exam.
+INSTITUTE OF ENGINEERING = |Level BE Full Marks . 60
+Examination Control Division | Programme BEI,BCT Pass Marks 24
+2083 Baishakh Year/Parti/ Time Shs.
+Subject: - Digital Logic (ENEX152)
+Y Candidates are required to give their answers in their own words as far as practicable.
+¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. Convert the following gray codes to binary codes. [242]
+a) 10011
+b) 110001
+2. Differentiate between analog and digital signal. Convert 159 to excess-3 code. [1+2]
+3. Show that NAND and NOR gates are universal gates. [3]
+4. Minimize the function F (A, B, C, D) = ¥ m (1, 2, 4, 5, 6, 8, 10, 11, 13, 15) using K-Map
+and realize it with suitable logic gates. [5]
+5. Differentiate between encoder and decoder. Design octal to binary encoder with
+necessary diagrams. [2+4]
+6. Implement a full subtractor circuit using multiplexer. [4]
+7. Differentiate between latch and flipflop. Modify a D flip-flop such that it functions as a
+JK flip-flop. (2+5]
+8. Explain the working of 4-bit SIPO register with timing diagram of 1010 data input. {5]
+9, Describe the operation of asynchronous BCD (decade) counter with necessary diagrams. [5]
+10. Design the synchronous mod-10 up counter using T flip-flop and draw its timing diagram
+also. 7]
+11. Design a synchronous sequential machine that has Ibit serial input X and output Z which
+will be high when the input contains the message 011 (Use T Flip Flop). [7]
+12. Explain about the main characteristics of digital logic families. [4]
+2K
+
+
+--- PAGE 2 ---
+TRIBHUVAN UNIVERSITY [Exam
+STITUTE OF ENGINEERING Level = BE. Full Marks 60
+Examination Control Division [Programme BELBCT _{ Pass Marks (24 |
+Y Chndidates are required to give their answers in their own words as far as practicable.
+v¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. Convert the following binary codes to gray codes. [2+2]
+a) 101101
+b) 110001
+2. What is 2’s complement representation? Perform BCD addition of 23 + 48. [1+2]
+3. te and explain De Morgan’s Theorem with truth table and necessary diagrams. [4]
+4. Minimize the function F (A, B, C, D) = ¥ m (0,1,2,4,7,8,9,10,12,15) +d (5,11,13) using
+-Map and realize it with suitable logic gates. [5]
+5. at is magnitude comparator? Design a 3-bit magnitude comparator. [1+5]
+6. Implement a full adder circuit using Multiplexer. [4]
+7. WDifferentiate between combinational circuit and sequential circuit. With necessary steps
+d implementation, Convert SR flip flop into JK flip flop. [2+5]
+8. Write briefly about different types of shift registers. With necessary circuit and timing
+iagrams, explain the operation of how the shift register is used as a Johnson’s Counter. [2+3]
+9. Describe the operation of 3-bit ripple up counter with positive edge triggered clock. [5]
+10. Design the synchronous mod- 6 counter using S R flip-flop and draw its timing diagram
+so. (7]
+11. Design a synchronous sequential machine that has 1bit serial input X and output Z which
+ill be high when the input contains the message 110 (Use SR Flip Flop). (7)
+12. Write a short note on frequency counter. 13]
+KK
+
+
+--- PAGE 3 ---
+TRIBHUVAN UNIVERSITY (Exam, Back (New Course)
+
+INSTITUTE OF ENGINEERING Level =| BE | Full Marks | 60 |
+
+Examination Control Division | Programme | BCT, BEI Pass Marks (24
+2082 Baishakh LYear/ Part (1/M | Time 3 hrs. |
+_ a Subject ~ Digital Logie (Bx 152) ~ ~ | ; | sn ~
+
+v Candidates are required to give their answers in their own words as far as practicable.
+¥ Attempt All questions.
+Vv The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. Define an ASCII code. Use 2’s complement method to perform the following addition
+
+(-28 +12)i0 in 8-bit signed number representation. [1+3]
+2. Prove the following: [2x2]
+
+a) AB+AC+BC=AB+AC : ;
+
+b) AB + C(A@®B) = BC + A(B+C)
+3. What is a decoder? Design an octal priority encoder with neat circuit diagram. [2+6]
+4. Realize the following Boolean function using a single 3x8 decoder. Also’ simplify the
+
+logic function implementing K-map method. (3+3]
+
+X (A,B,C,D) = Sim (0,2,3,7, 8,10,11,14,15)
+
+5. Design a synchronous 2-bit up/down counter using T flip-flops. [7]
+6. Explain the operation of 4-bit parallel-in serial-out (PISO) shift register with necessary
+
+circuit and timing diagram for 1101 input data. [3+2]
+7. Sketch the circuit diagram of mod-12 asynchronous counter having positive-edge
+
+triggering clock system implementing JK flip-flops with neat timing diagram. [3+3]
+8. Design a sequential machine that consists of one input, X and one output, Z. The machine
+
+is required to give output high (Y=1), whenever it detects the serial sequence of 010 from
+
+its input data stream X. Implement only D flip-flops for the designed circuit realization. [10]
+9. Draw the circuit diagram of two-input CMOS NAND gate and explain its logic operation
+
+briefly and list the characteristics of TTL logic family. [4+2]
+10. With the help of functional diagram explain the operation of time measuring circuit. [4] ;
+
+#RK
+
+
+--- PAGE 4 ---
+TRIBHUVAN UNIVERSITY | Exam.) Regular (New Course-2080 Batch)
+| INSTITUTE OF ENGINEERING evel BE Full Marks 60
+| Examination Control Division | Programme BEI, BCT PassMarks 24 |
+| 2081 Ashwin Near/Part "1/0 Time Shs. |
+| ~ Candidates are Trequired to give their answers in their own words as far as practicable,
+| v Attempt All questions.
+| v The figures in the margin indicate Full Marks.
+| Y Assume suitable data if necessary,
+1. Mention merits and demerits of digital signal over analog signal. [2]
+2. Perform the following as indicated: [2x1.5]
+a) (6E.2C)16 = (2)8
+b) (101101 10)Gray = (7)2
+3. Design the simplest logic circuit for <P segment for the BCD-to-seven segment display
+decoder, [4]
+4. Implement Y (A, B, C) = dm (0, 2, 3, 5, 7) using only a single 1:4 MUX. Design a circuit
+which can realize both the half-adder and the half-subtractor in a Single circuit, [3+7]
+5. Design a mod-6 synchronous down counter using JK flip-flops. [7]
+6. Explain the Operation of 4-bit serial-in parallel-out (SIPO) shift register with necessary
+circuit and timing diagram for input data of1011, [3+3]
+7. Describe briefly the operation of 3 bit up/down asynchronous counter having negative
+edge triggering clock system with neat circuit diagram and timing diagram. [4+3]
+8. Design a sequential machine that consists of one input, X and one output, Z. The machine
+is required to give output high (Y=1), whenever it detects the serial sequence of 101 from
+its input data stream X. Implement only SR flip-flops for the designed circuit realization, [10]
+9. Draw the circuit diagram of two-input TTL NOR gate and explain its logic operation
+briefly and list the characteristics of CMOS logic family. [5+2]
+10. With the help of functional diagram explain the operation of frequency measurement. [4]
+aK
+
+

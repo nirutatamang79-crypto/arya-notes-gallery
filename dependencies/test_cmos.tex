@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\begin{document}
+
+% CMOS NAND 2-input
+\begin{circuitikz}[scale=0.9]
+  % Rails
+  \draw (-1.5,4) node[above] {{DD}$} to[short, o-] (1.5,4);
+  
+  % PMOS 1 and 2 in parallel
+  \draw (-1,4) to[short] (-1,3.5) node[pmos, anchor=source] (p1) {};
+  \draw (1,4) to[short] (1,3.5) node[pmos, anchor=source, xscale=-1] (p2) {};
+  
+  % Connect Drains of PMOS
+  \draw (p1.drain) to[short] (-1,1.8) -- (1,1.8) to[short] (p2.drain);
+  \draw (0,1.8) to[short, *-o] (2.5,1.8) node[right] { = \overline{A \cdot B}$};
+  
+  % NMOS 1 and 2 in series
+  \draw (0,1.8) to[short] (0,1.2) node[nmos, anchor=drain] (n1) {};
+  \draw (n1.source) to[short] (0,-0.2) node[nmos, anchor=drain] (n2) {};
+  \draw (n2.source) to[short] (0,-1.0) node[ground] {};
+  
+  % Inputs A and B
+  \draw (p1.gate) to[short] (-2.5, 2.9) node[left] {$};
+  \draw (-2.0, 2.9) to[short, *-] (-2.0, 0.6) |- (n1.gate);
+  
+  \draw (p2.gate) to[short] (2.0, 2.9) -- (2.0, 3.2) -- (-2.8, 3.2) -- (-2.8, -0.8) |- (n2.gate);
+  \draw (-2.8, 3.2) node[left] {$};
+\end{circuitikz}
+
+\end{document}

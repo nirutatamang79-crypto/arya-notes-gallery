@@ -1,0 +1,190 @@
+--- PAGE 1 ---
+TRIBHUVAN UNIVERSITY Exam. |
+INSTITUTE OF ENGINEERING _| Level "BE Full Marks _, 6°
+Examination Control Division | Programme BEI, BCT _ Pass Marks _2#
+2083 Baishakh Year/Part_ “Wit Time 3S
+
+Y Candidates are required to give their answers in their own words as far as practicable.
+
+¥ Attempt All questions.
+
+Y The figures in the margin indicate Full Marks, ;
+
+¥ Assume suitable data if necessary.
+
+1. Why BIT is bipolar and FET is unipolar? Design B-independent type DC biased common
+collector amplifier. Given parameters are: Vcc = 20 V, Ic = 2 mA, and B =100. Use firm i
+biasing method. [145]
+
+2. Explain the role of bypass capacitor in amplifier circuits. Draw the small signal
+equivalent circuit of a common base amplifier circuit and find its input impedance, output 945
+impedance and voltage gain. p+
+
+3. Describe the construction and working principle of N Channel D-MOSFET with the help 6
+of characteristic curves and mathematical expressions. [6]
+
+4. Find Ip and Vps for the given circuit. Given parameters: Vp = -AV and Ipss = 8 mA. 7]
+
++16
+2.1 MQ 2.4kQ
+270 kQ 1.5 kQ
+
+5. What is the main difference between RC and LC oscillator circuits in terms of
+application? Explain the operation of Wien Bridge Oscillator circuit with the help of
+circuit diagram and necessary mathematical expressions. [1+5]
+
+6. Explain how a base current compensation circuit reduces the difference between 10 and
+IREF ina simple current mirror circuit. [5+2]
+
+7. For aclass B amplifier providing a 20 V peak signal to a 16 Q load (speaker) and a power
+
+supply of Vec= 30 V, determine the input power, output power, and circuit efficiency. [6]
+
+8. Draw the circuit diagram and the characteristic curve of a transformer-coupled class A
+
+amplifier and derive its general and maximum efficiency. [7]
+
+9, Derive the expression for stability factor of a discrete-transistor series regulator. [4]
+
+10. Design a variable DC voltage regulator using the LM317 to output (3-15) volts. [4]
+ARK
+
+
+--- PAGE 2 ---
+OO TRIBHUVAN UNIVERSITY (Exam, |
+INSTITUTE OF ENGINEERING = [Level == BE Fu Marks 09
+Examination Control Division Programme BEI, BCT Pass Marks 24
+2082 Bhadra | Year/Part 1/0 Time 3 hrs.
+Y Candidates are required to give their answers in their own words as far as practicable.
+v Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+v¥ Assume suitable data if necessary.
+1, at is the significance of B-independency in a voltage divider biasing circuit? Design a
+B-independent voltage divider bias circuit for the given parameters: Vcc = 15 V, Iz = 1
+and B = 100. {1+5]
+2. Explain the role of coupling capacitors in amplifier circuits. Draw the small signal
+eqhivalent circuit of a common emitter amplifier circuit and find its input impedance,
+output impedance and voltage gain. [2+5]
+3. Describe the construction and working principle. of n-channel JFET with the help of
+chpracteristic curves and mathematical expressions. [6]
+4. Find Jp and Vps for the circuit shown in the figure below. Given parameters are:
+V,= 1 V and K = 0.48 mA/V?. (7)
++10 V
+11 MQ 6kQ
+11M 6kQ
+|
+|
+5. State Barkhausen criteria for sinusoidal oscillation. Explain the working principle of RC
+phase shift oscillator with necessary expression and circuit diagram. [6]
+6. With 4 neat circuit diagram and necessary mathematical expressions, explain the
+te) eration of Widlar current source. What is the advantage of Widlar current source over
+simple current source? [5+2]
+7. Draw the circuit diagram of transformer coupled Class B amplifier. Determine the
+cgndition for minimum efficiency of Class B amplifier. [6]
+8. Define crossover distortion in a class B amplifier and explain how class AB operation can
+b¢ used to eliminate it. [6]
+9. Explain the working principle of a series transistor voltage regulator, acgompanied by
+short-circuit/overload protection. . [5]
+10. Design a 10-25 V variable DC voltage regulator using LM317 IC. [4]
+KK
+
+
+--- PAGE 3 ---
+TRIBHUVAN UNIVERSITY ck (New Course) a
+INSTITUTE OF ENGINEERING [Level | BE Full Marks | 60 |
+Examination Control Division | Programme BEI,BCT | Pass Marks 24 |
+2082 Baishakh LYear/Part 1/M | Time 3 hrs.
+_ Subject: - Electronic Device and Circuit (EX 15!)
+Y Candidates are required to give their answers in their own words as far as practicable.
+Y Attempt All questions.
+Vv The figures in the margin indicate Full Marks.
+¥ Assume suitable data if necessary.
+1. Design a B-independent voltage divider bias circuit using the appropriate guidelines for
+the given parameters: Vcc = 12 V, Ie = 1 mA, and B = 100. [4]
+2. Determine input resistance, voltage gain and output resistance of given common emitter
+BJT Amplifier. B =120 and ro = 40 kQ. [5]
++20-V .
+470K 2K2
+C2
+- Vo
+a :
+Vin —
+: OKS56
+3. Explain the operation principle of a BJT as a switch with the necessary diagrams. [4]
+4. Describe the construction and working principle of n-channel depletion type MOSFET -
+with the help of characteristics curve and mathematical expressions. [7]
+5. For the given JFET voltage divider configuration, determine Ing, Vasa, Vos and
+transconductance gm. [6]
+2 20V
+2.2 kQ
+910 kQ
+$0
+Ipss = 1OmA
+Ve” + ‘ Vpos3.5 Vv
+Vaso
+110 kQ Lika
+6. Draw circuit diagram of LC Hartley oscillator. Derive its frequency of oscillation. [4]
+7. Derive the expression of bandwidth of class A tuned amplifier. [4]
+8. Show that the voltage gain of the differential amplifier with active load is twice that with
+passive load. [5]
+9. Derive general efficiency of series fed class A amplifier. [4]
+
+
+--- PAGE 4 ---
+10. For a class B amplifier using a supply of Vcc = 30 V and driving a load of 16 Q,
+determine the maximum input power, maximum output power and maximum power
+dissipation at transistors. [5]
+
+11. Derive frequency of oscillation of $55 timer Astable Multivibrator [4]
+
+12. Draw series voltage regulator with current limiting circuit and explain how this protection
+circuit works, Design a voltage regulator to give output voltage from 5 V to 15 V using
+
+- LM317. [4+4]
+
+oR ok ok
+
+
+--- PAGE 5 ---
+TRIBHUVAN UNIVERSITY | Exam, Regular (New Course-2080 Batch)
+INSTITUTE OF ENGINEERING phevel BE FullMarks 60
+| Examination Control Division [Programme BEI, BCT Pass Marks 24
+V Candidates are required to give their answers in their own words as far as practicable,
+¥ Attempt All questions.
+Y The figures in the margin indicate Full Marks.
+Y Assume suitable data if necessary,
+1. Design B independent type de biased common emitter amplifier. Given parameters
+Vec = 20 V, Ic = 1.5 mA and B= 110. Use stiff biasing method. [4]
+2. Why is a common collector BJT amplifier also known as an emitter follower? Draw the
+small signal model of common collector amplifier circuit and derive expressions for input
+resistance, voltage gain, and current gain. [1+4]
+3. Derive trans-conductance of BIT. [4]
+4. Describe the construction and working principle of n channel enhancement-type
+MOSFET with the help of necessary diagrams and its drain characteristic curve. [7]
+5. Find Ip and Vps for the following circuit, Given data are Vp = -5.5 V, Ipss = 10 mA.
+Assume all the capacitors are ideal and check whether the transistor is Operating in the
+Pinch off region or not. [6]
+Von= 20 V
+1.5MQ 2kQ
+b %
+Co
+Yin—4 :
+Ce
+330 KQ 1kQ “]
+6. State Barkhausen criterion for sinusoidal oscillation. Draw the circuit diagram of Colpitts
+oscillator and write its frequency of oscillation. [4]
+7. Derive frequency of oscillation of 555 timer Astable Multivibrator. [4]
+8. Draw a Widlar Current Source. Derive an expression for an output resistance of Widlar
+Current Source. [5]
+9. Calculate the efficiency of a transformer coupled Class A amplifier for a supply of 12 .
+V DC and output of Vp = 12 V and 6 V. [4]
+10. Draw the circuit diagram and the characteristic curve of a transformer coupled class B
+push-pull amplifier and derive its general efficiency. [5]
+11. Draw the circuit diagram of class A tuned amplifier with its frequency response. Derive
+its 3dB bandwidth. [4]
+12. Design variable DC voltage regulator using LM 317 to get (10-20) volts output. [4]
+13. Explain the working principle of a series transistor voltage regulator with improved |
+performance and derive an expression for the voltage stability. [2+2]
+cee
+
+

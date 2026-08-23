@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\begin{document}
+
+\begin{circuitikz}[scale=1.0]
+  % Rails
+  \draw (-2.5, 4.5) node[above] {{DD}$} -- (2.5, 4.5);
+  
+  % Transistors
+  \node[pmos] (p1) at (-1.2, 3.2) {};
+  \node[pmos, xscale=-1] (p2) at (1.2, 3.2) {};
+  \node[nmos] (n1) at (0, 1.2) {};
+  \node[nmos] (n2) at (0, -0.5) {};
+  
+  % VDD to PMOS Sources
+  \draw (-1.2, 4.5) -- (p1.S);
+  \draw (1.2, 4.5) -- (p2.S);
+  
+  % Connect Drains of PMOS to Output Node
+  \draw (p1.D) -- (-1.2, 2.2) -- (1.2, 2.2) -- (p2.D);
+  \draw (0, 2.2) -- (n1.D);
+  \draw (0, 2.2) -- (2.5, 2.2) node[right] { = \overline{A \cdot B}$};
+  
+  % Series NMOS to Ground
+  \draw (n1.S) -- (n2.D);
+  \draw (n2.S) -- (0, -1.5) node[ground] {};
+  
+  % Gate Inputs
+  \draw (p1.G) -- (-2.2, 3.2) node[left] {$};
+  \draw (-1.8, 3.2) -- (-1.8, 1.2) -- (n1.G);
+  \fill (-1.8, 3.2) circle (2pt);
+  
+  \draw (p2.G) -- (2.0, 3.2) -- (2.0, 4.0) -- (-2.8, 4.0) node[left] {$} -- (-2.8, -0.5) -- (n2.G);
+\end{circuitikz}
+
+\end{document}

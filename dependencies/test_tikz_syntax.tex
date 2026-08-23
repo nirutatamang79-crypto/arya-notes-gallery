@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.gates.logic.US,positioning,calc,arrows.meta,automata}
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[scale=0.9, transform shape, >=Stealth]
+  \node[draw, rectangle, minimum width=2.4cm, minimum height=2cm] (ff0) at (0,0) {};
+  \node at (ff0.center) {\textbf{FF0 (T)}};
+  \node[anchor=west] at (ff0.west) {\ \small $};
+  \node[anchor=south west] at (ff0.south west) {\ \small $>$};
+  \node[anchor=east] at (ff0.east) {\small $};
+\end{tikzpicture}
+\end{center}
+\end{document}

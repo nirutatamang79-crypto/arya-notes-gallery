@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Inspector & Live Traffic — Arya's Notes Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="inspector-header">
+    <div class="header-brand">
+      <div class="brand-title-row">
+        <span class="inspector-title">Arya's Request Inspector</span>
+        <span class="live-status-pill mono">
+          <span class="pulse-dot"></span>
+          <span id="live-polling-text">LIVE STREAMING</span>
+        </span>
+      </div>
+      <span class="inspector-subtitle mono">Server Traffic Analytics · Real-time Access & Visitor Logger</span>
+    </div>
+
+    <div class="header-actions">
+      <!-- Direct Portal Link -->
+      <a href="/solutions/web_app/" class="btn-pill mono" target="_blank" title="Open Main Notes Portal">
+        <span>VISIT PORTAL ↗</span>
+      </a>
+
+      <!-- Refresh Now Button -->
+      <button class="btn-pill mono" id="manual-refresh-btn" onclick="fetchLiveRequests()">
+        <span id="refresh-label">REFRESH</span>
+      </button>
+
+      <!-- Auto-polling Interval Toggle -->
+      <button class="btn-pill active mono" id="auto-poll-btn" onclick="toggleAutoPolling()">
+        <span id="auto-poll-text">AUTO (2s)</span>
+      </button>
+
+      <!-- Theme Switcher -->
+      <button class="btn-pill mono" id="theme-toggle-btn" onclick="toggleTheme()">
+        <span id="theme-toggle-text">DARK</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Container -->
+  <main class="inspector-main">
+
+    <!-- KPI Metric Cards Grid -->
+    <section class="kpi-grid">
+      <!-- 1. Unique Visitors KPI -->
+      <div class="kpi-card" style="--card-accent: #f59e0b;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">UNIQUE VISITORS</span>
+          <span class="kpi-badge mono">PEOPLE</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-unique-visitors">0</div>
+        <div class="kpi-subtext mono">Total distinct people who visited</div>
+      </div>
+
+      <!-- 2. Portal Page Views KPI -->
+      <div class="kpi-card" style="--card-accent: #10b981;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">PORTAL PAGE VIEWS</span>
+          <span class="kpi-badge mono">SESSIONS</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-page-views">0</div>
+        <div class="kpi-subtext mono">Main website opens</div>
+      </div>
+
+      <!-- 3. PDF Downloads KPI -->
+      <div class="kpi-card" style="--card-accent: #7c3aed;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">PDF DOWNLOADS</span>
+          <span class="kpi-badge mono">MATERIALS</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-pdf-downloads">0</div>
+        <div class="kpi-subtext mono">Master solutions & questions</div>
+      </div>
+
+      <!-- 4. Total Requests KPI -->
+      <div class="kpi-card" style="--card-accent: #0284c7;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">TOTAL REQUESTS</span>
+          <span class="kpi-badge mono">ALL-TIME</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-total-requests">0</div>
+        <div class="kpi-subtext mono">Total HTTP hits handled</div>
+      </div>
+
+      <!-- 5. Student Reviews KPI -->
+      <div class="kpi-card" style="--card-accent: #ec4899;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">STUDENT REVIEWS</span>
+          <span class="kpi-badge mono" id="kpi-reviews-badge">★ 5.0</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-total-reviews">4</div>
+        <div class="kpi-subtext mono" id="kpi-reviews-subtext">100% positive feedback</div>
+      </div>
+
+      <!-- 6. Success Rate KPI -->
+      <div class="kpi-card" style="--card-accent: #059669;">
+        <div class="kpi-top">
+          <span class="kpi-label mono">SUCCESS RATE</span>
+          <span class="kpi-badge mono">STATUS</span>
+        </div>
+        <div class="kpi-value mono" id="kpi-success-rate">100%</div>
+        <div class="kpi-subtext mono" id="kpi-errors-count">0 errors logged</div>
+      </div>
+    </section>
+
+    <!-- Visual Analytics & Unique Visitors Window Grid -->
+    <section class="analytics-split-row">
+      
+      <!-- Unique Visitors Window Card -->
+      <div class="chart-card" id="unique-visitors-panel">
+        <div class="card-header-row">
+          <h3 class="card-title">Unique People & Device Inspector</h3>
+          <span class="card-meta mono" id="unique-visitors-header-count">0 UNIQUE CLIENTS</span>
+        </div>
+        <div class="visitors-list-wrap" id="visitors-list-wrap">
+          <!-- Dynamically Injected Unique Visitors -->
+        </div>
+      </div>
+
+      <!-- Subject Downloads Distribution -->
+      <div class="chart-card">
+        <div class="card-header-row">
+          <h3 class="card-title">Subject Material Downloads Breakdown</h3>
+          <span class="card-meta mono" id="total-downloads-tag">0 DOWNLOADS</span>
+        </div>
+        <div class="subject-bars-list" id="subject-bars-list">
+          <!-- Dynamically Injected -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Detailed Request Log Table Section -->
+    <section class="logs-section">
+      <div class="logs-header-row">
+        <div class="logs-header-left">
+          <h2 class="section-title">Incoming Request Stream</h2>
+          <span class="logs-count-pill mono" id="filtered-count-badge">0 ENTRIES</span>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="logs-filter-group">
+          <!-- Search Bar -->
+          <input type="text" id="log-search-input" class="log-search-input mono" placeholder="Search path, subject, IP..." oninput="handleFilterChange()" />
+
+          <!-- Category Filter Buttons -->
+          <div class="category-pills">
+            <button class="cat-pill active mono" onclick="setCategoryFilter('ALL')">ALL</button>
+            <button class="cat-pill mono" onclick="setCategoryFilter('DOWNLOAD')">DOWNLOADS</button>
+            <button class="cat-pill mono" onclick="setCategoryFilter('PAGE_VIEW')">PAGE VIEWS</button>
+            <button class="cat-pill mono" onclick="setCategoryFilter('ASSET')">ASSETS</button>
+            <button class="cat-pill mono" onclick="setCategoryFilter('ERROR')">ERRORS</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logs Table -->
+      <div class="table-container">
+        <table class="requests-table mono">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Timestamp</th>
+              <th>Method</th>
+              <th>Resource Path</th>
+              <th>Subject / Category</th>
+              <th>Status</th>
+              <th>Client IP</th>
+            </tr>
+          </thead>
+          <tbody id="requests-table-body">
+            <tr>
+              <td colspan="7" class="table-loading">Loading live request logs...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="inspector-footer mono">
+    <span>Arya's Notes Gallery · Live Request Inspector & Stream Analyzer</span>
+    <span id="last-updated-text">Last synchronized: Just now</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

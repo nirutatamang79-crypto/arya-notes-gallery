@@ -1,0 +1,209 @@
+--- PAGE 1 ---
+Py TRIBHUVAN UNIVERSITY (Exam.
+INSTITUTE OF ENGINEERING i Level” _BE _FullMarks (600 |
+Examination Control Division ProgrammeAli(Except BAR) Pass Marks i 24 i
+2083 Baishakh [Year/Part (1/Tr. | Time | Shs. |
+; : Subject: - Engineering Mathematics II (ENSH 151) 7
+Y Candidates are required to give their answers in their own words as far as practicable.
+Y Attempt All questions.
+¥ The figures in the margin indicate Full Marks ia * ’
+v Assume suitable data if necessary a
+Group A (12x2) ——
+(,2,.2) -
+1. a) ifus=sin! xy |, then show that oo +y a = tanu
+x+y J Ox oy a.
+b) If u=xyz,v=xy+yz+zx,w=x+y+z, find jacobian Ot, v,w)
+Ox, y,Z)
+2x 1
+2. a) Evaluate f f-s—s andy
+‘ 10% +¥
+b) Find the mass of solid bounded by z = 1-x’ and planes z = 0, y=1,y =-1 with
+P (%GY,2Z) = 2(y+2).
+3. a) Find the directional derivatives of the 6 = 4x°43y-4z at (1,2,1) in the direction
+> 3 >
+2i+2j+k
+> 5 5 > - >
+, b) Prove that F =(y* ~z° +3yz—2x) i +(3xz+2xy) j4 (3xy ~-2xz+2z)k is
+: solenoidal.
+c) Find the VX (V6) where $= xo + y> +23 - 3xyz.
+4. a) State existence criteria of the Laplace transform»Evaluate the Laplace transform of
+Inet
+: t
+: b) Find the inverse Laplace transform of — soe
+s°-3s+2
+. 6 1 5)
+5. a) Find the rank of the matrix! 4 2 6
+: 10 3 9 J
+| 3 1 0}
+b) Find the eigen values of the matrix A=|1 3 0
+002 J
+6. Express the function f(x) =1+x —x? in terms of Lagendre’s polynomials.
+
+
+--- PAGE 2 ---
+s
+Group B (9x4,
+7. Find the extreme value of the function u(x,y) = x? + xy + y? +3z7 under the constraint
+x+2yt4z = 60.
+8. Evaluate J i} ---- dxdy by changing the order of the integration.
+Ox y
+>
+9. Prove that the necessary and sufficient condition for the vector function a of scalar
+, >
+: : . oda
+variable t to have constant magnitude is a a 0
+. 2 2 2
+. 10. State Green’s theorem in plane. Apply it to find the area of the curve x3 + y3 =a3
+. =>
+11. Apply Gauss divergence theorem, evaluate f f F nds, where
+> > 49 >
+F =(2xy+z)it+y* j-(x+3y)k and S is region bounded by the surface of the planes:
+2x+2yt+z = 6, x=0, y=0, z=0.
+OR
+Apply Stoke’s theorem to evaluate the line integral o¢(xydx + xy7dy) where C is the
+boundary of the square in xy-plane with vertices (-1,0), (1,0), (0,1) and (0,-1).
+12. Solve the differential equation y"(t) + 4y'(t) + 4y(t) = ets y(0) = y'(0)=0, using Laplace
+transform method.
+13. Test the consistency of the system of linear equations and find their solution if found
+consistent.
+2x-yt3z = 8
+-xt2y+z=4
+3xty-4z =0
+14. Reduce the quadratic form Q (X) = Sx? + 2x3 + 2x3 + 4x)x3 + 2xX2x3+4x}x3 into
+canonical form.
+: 15. Solve y"~4xy'+(4x? ~ 2)y =0 by power series method.
+OR
+2 |3-x? 3 ;
+Prove that J5(x)= tx) 2 Sinx ~ =cosx where the symbols have their usual
+= 34 x x
+2
+meanings.
+EK
+
+
+--- PAGE 3 ---
+TRIBHUVAN UNIVERSITY | Exam, a Regular (New Course)
+: INSTITUTE OF ENGINEERING i Level _ BE | Full Marks | 60 i
+Examination Control Division | Programme | All a | Pass Marks 24
+2082 Bhadra LNear/Part 1/iL Time Ss.
+| Subject: - Engineering Mathematics II (ENSH 151)
+|
+Y Candidates are required to give their answers in their own words as Jar as practicable.
+Y Attempt All questions. j
+v The figures in the margin indicate Full Marks. i
+¥ Assume suitable data if necessary,
+. Group A (12x2) -
+ou, ug = tan-? (42
+1. a) Show that *ar + ¥5, = Sin 2u where u = tan ( Ly ).
+= as rel any)
+b) Ifx =rcos@ ,y =rsin8@, then find reray
+2. a) Find the moment about x-axis of the lamina bounded by y=x and y= x? with
+density p(x, y) = 1.
+b) Find the area of the region bounded by the lines x = y?,x = 2y-y?.
+3. a) A particle moves along the curve x = 3cost ,y=3sint ,z=6t, then find the
+velocity and acceleration at time t —
+b) IfF = grad (x3 + y3 + 23 — 3xyz), then find div F
+c) Find the work done by the force F= x27 ~xyj along the path C given by
+xvt+y?=1,72=0.
+4. a) State existence condition for Laplace transform. Obtain the Laplace transform of
+tsin 3t.
+b) Find the inverse Laplace transform of F (s) = cot*(s + 1).
+12 -1 3
+5. a) Find the rank of matrix]2 4 1 —2),
+3.6 3 -7
+b) Reduce the quadratic form Q(X) = 17x? — 30x,x, + 17x into canonical form.
+6. Express the function f(x) = 4+ 2x + x? in terms of Legendre’s polynomials.
+Group B (9x4)
+7. Find the extreme values of the function x? + y? + 22 subject to the condition x + y +
+z=1,
+8. Change the order of integration and evaluate i G* xy dx dy.
+9.” Prove that the necessary and sufficient condition for the vector function @ of scalar
+variable t to have constant direction is d x = =0.
+
+
+--- PAGE 4 ---
+2
+10. State Green’s theorem in plane and using it find the area of the hypocycloid (2) +
+2
+y\3
+G)=1
+11. Use Gauss-Divergence theorem to evaluate f| fF -fids, where F= (x? — yz)it
+(y? — zx) j+(z? — xy)k where S is the surface of parallelopiped bounded by x = 0,x =
+a,y=0,y=bandz=0,z=c. :
+OR
+Apply Stoke’s theorem to evaluate the $.(x + y)dx + (2x —z)dy + (y + z)dz where
+C is the boundary of triangle with vertice (2,0,0), (0,3,0) and (0,0,6).
+. 12. Using Laplace transform, solve the initial value problem
+x" — 3x! + 2x =e-*, x(0) = 0,x'(0) = 1.
+1041
+13. Apply Cayley-Hamilton theorem to find the inverse of matrix ( 1 0
+10 2
+5 . _ 11 4
+14. Diagonalize the matrix FB 4
+15. Solve the differential equation y” + xy’ + y = 0 by using the power series method.
+OR
+2 (3-x? , 3 PI
+Prove that Js(x) = Ee sinx — > cos x} where the symbols have their usual
+2
+mearings.
+RK
+
+
+--- PAGE 5 ---
+| tenement
+TRIBHUVAN UNIVERSITY { Exam. - Regular (New Course -2080 Batch)
+INSTITUTE OF ENGINEERING | Level _BE _FullMarks (60 |
+Examination Control Division Programme All(Except BAR) | Pass Marks (24 |
+Subject: - Engineering Mathematics II (SH 151)
+¥ Candidates are required to give their answers in their own words as far-as practicable. ,
+¥ Attempt All questions. Wes Rey ma |
+The figures in the margin indicate Full Marks. | 3S trl
+v Assume suitable data if necessary. it PERE Pay |
+1. a) By using Euler’s theorem show that xm + ye = sin2u
+where, u = tan“1(x? + 2y?) [2]
+=x2 andy =? acu)
+b) Ifu =x? and v = y?, then find ay) [2]
+2. a) Evaluate) {> {**7(x + y +2) dy dx dz [2]
+b) Evaluate the mass of the solid region bounded by z= 1— x? and planes z = 0,
+y=1y=-1 with p(x, y,z) = z(y + 2) [2]
+3. a) Find the directional derivative of P(x, y) = 4x? + 3y — 42 at (1, 2,1) in the
+direction of 27+ 27 +k 2]
+b) A particle moves along the curve x = V2 cost, y =v2sint, z= At, then find the
+velocity and acceleration at time t = ; [2]
+c) If 6=x3 + y? +23 — 3xyz, then find div (grad p)at the point (1,—1, 1) [2]
+4. a) Find the Laplace Transform of the function: ae [2]
+b) Find the inverse Laplace transform of aa [2]
+5. a) Find the rank of the following matrix:
+2-4 3 1 0
+1 -2 1 -4 2 [2]
+0 1 -i 3 1
+b) Test whether the vectors (1,1, 1), (1,-1, 1) and (2,0, 3) are linearly independent or
+dependent. [2]
+6. Express 2x? — 4x + 2 as the Legendre’s polynomials. [2]
+7. Find the minimum value using Lagrange multiplier method of x? + xy + y? + 32?
+subject to the condition x + 2y + 4z-60=0. [4]
+ae 5 - a px cosy
+8. Change the order of integration and evaluate JS b f b Jee dxdy. [4]
+9. Prove that tthe necessary and sufficient conditions for a vector function G of a scalar
+variable t to have a constant direction is @ x = =0 [4]
+
+
+--- PAGE 6 ---
+a
+2 2
+| 10. Find the area of asteroid x3 + y3 = a?/3 using Green’s theorem, [4]
+; 11. Apply Gauss-Divergence theorem to evaluate f J, Firids for F = xf — yi + (22? -Dk
+and s is the cylinder formed by the surface z = 0, z=1,andx?+y?=4 [4]
+| 12. Using the Laplace transform technique, solve the initial value problem: [4]
+y"© — yO + 6y(t) = et, y(0) = 0,y'(0) =0
+3.2 2
+| 13. Find the eigen values and eigen vectors of the matrix} 1 4 1 [4]
+| -2 -4 -1
+| 14. Reduce the quadratic form Q(x) = 6xf + 3x} + 3x3 — 4x, x, — 2X2X3 + 4x,x3 into
+canonical form. [4]
+15. Solve y" ~ 4xy’ + (4x? — 2)y = 0 by power series method. [4]
+eK
+|
+|
+
+

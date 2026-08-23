@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+  \draw (0,3) node[above] {{DD}$} to[short, o-] (0,2.5)
+        to[pmos, n=p1] (0,1.5)
+        to[nmos, n=n1] (0,0.5)
+        node[ground] {};
+  \draw (p1.G) -- ++(-0.5,0) node[left] {$};
+  \draw (n1.G) -- ++(-0.5,0) node[left] {$};
+  \draw (p1.D) -- ++(1,0) node[right] {$};
+\end{circuitikz}
+\end{document}
