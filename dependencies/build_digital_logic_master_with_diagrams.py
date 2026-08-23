@@ -1,4 +1,14 @@
-\documentclass[11pt,a4paper,oneside]{book}
+"""
+Digital Logic (ENEX 152 / EX 152) — Master Solutions Book with Complete Logic Circuit Schematics
+Tribhuvan University, Institute of Engineering (IOE)
+Polished Logic Diagrams & Verified Schematics
+"""
+
+import os
+import subprocess
+import shutil
+
+latex_content = r'''\documentclass[11pt,a4paper,oneside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1.8cm, top=2.2cm, bottom=2.2cm]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -1652,3 +1662,17 @@ $$f_x = \frac{N}{T_{\text{gate}}}$$
 \end{answerbox}
 
 \end{document}
+'''
+
+with open('dependencies/digital_logic_master_solutions.tex', 'w') as f:
+    f.write(latex_content)
+
+print("Wrote Final Digital Logic Master Solutions LaTeX source with polished TikZ schematics.")
+subprocess.run(['pdflatex', '-interaction=nonstopmode', '-output-directory=dependencies', 'dependencies/digital_logic_master_solutions.tex'], capture_output=True, text=True)
+subprocess.run(['pdflatex', '-interaction=nonstopmode', '-output-directory=dependencies', 'dependencies/digital_logic_master_solutions.tex'], capture_output=True, text=True)
+
+pdf_out = 'dependencies/digital_logic_master_solutions.pdf'
+if os.path.exists(pdf_out):
+    shutil.copy(pdf_out, 'subjects/2_digital_logic/Digital Logic Solutions.pdf')
+    shutil.copy(pdf_out, 'solutions/web_app/downloads/dl/digital_logic_solutions.pdf')
+    print("SUCCESS: Compiled and published complete Digital Logic Master Solutions Book!")
