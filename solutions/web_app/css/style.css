@@ -328,31 +328,6 @@ button {
   color: var(--text-main);
 }
 
-.featured-flag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.45rem;
-  background: var(--bg-accent);
-  color: var(--text-inverse);
-  border-radius: var(--radius-sm);
-}
-
-.in-progress-flag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.45rem;
-  background: var(--bg-subtle);
-  color: var(--text-main);
-  border: 1px dashed var(--border-medium);
-  border-radius: var(--radius-sm);
-}
-
 .subject-title {
   font-size: 1.35rem;
   font-weight: 800;
@@ -387,7 +362,14 @@ button {
   border-radius: 2px;
 }
 
-.card-actions-row {
+/* Multi-Action Card Download Area */
+.card-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.primary-download-row {
   display: flex;
   gap: 0.5rem;
 }
@@ -403,7 +385,7 @@ button {
   border-radius: var(--radius-sm);
   background: var(--bg-accent);
   color: var(--text-inverse);
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
   font-family: var(--font-mono);
   text-decoration: none;
@@ -424,7 +406,7 @@ button {
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
   background: var(--bg-surface);
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 600;
   font-family: var(--font-mono);
   color: var(--text-main);
@@ -434,6 +416,32 @@ button {
 .btn-preview-secondary:hover {
   border-color: var(--border-strong);
   background: var(--bg-subtle);
+}
+
+.secondary-download-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-sub-link {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.5rem;
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.btn-sub-link:hover {
+  border-color: var(--border-strong);
+  color: var(--text-main);
+  background: var(--bg-surface);
 }
 
 /* ==============================================================================
@@ -450,7 +458,7 @@ button {
 }
 
 /* ==============================================================================
-   PDF Viewer Modal & Arya Solving Modal
+   PDF Viewer Modal
    ============================================================================== */
 .modal-backdrop {
   position: fixed;
@@ -483,12 +491,6 @@ button {
   overflow: hidden;
 }
 
-.modal-dialog.narrow {
-  max-width: 600px;
-  height: auto;
-  max-height: 90vh;
-}
-
 .modal-header {
   padding: 0.85rem 1.25rem;
   border-bottom: 1px solid var(--border-medium);
@@ -509,74 +511,10 @@ button {
   background: #333333;
 }
 
-.modal-body.padded {
-  padding: 1.5rem;
-  background: var(--bg-surface);
-  overflow-y: auto;
-}
-
 .pdf-iframe {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-/* Arya Solving Artwork Frame */
-.arya-image-container {
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-sm);
-  background: #ffffff;
-  padding: 0.75rem;
-  margin-bottom: 1.25rem;
-  text-align: center;
-}
-
-.arya-image {
-  max-width: 100%;
-  max-height: 280px;
-  object-fit: contain;
-  border-radius: 2px;
-}
-
-.arya-modal-heading {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin-bottom: 0.4rem;
-  color: var(--text-main);
-}
-
-.arya-modal-text {
-  font-size: 0.925rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.arya-modal-actions {
-  display: flex;
-  gap: 0.75rem;
-}
-
-/* Toast Notification Shelf */
-.toast-shelf {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 120;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.toast-pill {
-  background: var(--text-main);
-  color: var(--text-inverse);
-  padding: 0.6rem 1.15rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid var(--border-strong);
-  font-family: var(--font-mono);
 }
 
 /* ==============================================================================
@@ -599,7 +537,7 @@ button {
     grid-template-columns: 1fr;
   }
   
-  .arya-modal-actions {
+  .secondary-download-row {
     flex-direction: column;
   }
 }
