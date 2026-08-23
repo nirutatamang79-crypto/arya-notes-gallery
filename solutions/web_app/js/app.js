@@ -13,6 +13,7 @@ const SUBJECTS_DATA = [
     pages: "55 Pages",
     fileSize: "678 KB",
     pdfUrl: "downloads/electrical_circuits_and_machines_master_solutions.pdf",
+    isReady: true,
     featured: true,
     desc: "Complete 55-page master solutions book (2083 Baishakh to 2081 Ashwin) with 10 redone Circuitikz schematics, Laplace transforms, Bode plots, Two-port networks, Transformers, and AC/DC machines.",
     tags: ["55 PAGES", "VERIFIED SOLUTIONS", "MESH & NODAL", "BODE PLOTS", "2-PORT NETWORKS", "AC/DC MACHINES"]
@@ -23,9 +24,10 @@ const SUBJECTS_DATA = [
     code: "SH 151",
     semester: "Semester I/II",
     marks: "80 Marks Weightage",
-    pages: "Comprehensive Packet",
-    fileSize: "PDF Ready",
-    pdfUrl: "downloads/engineering_mathematics_ii_master.pdf",
+    pages: "In Progress",
+    fileSize: "Upcoming",
+    pdfUrl: null,
+    isReady: false,
     featured: false,
     desc: "Differential Equations, Partial Differential Equations, Linear Algebra, Multiple Integrals, Vector Calculus, and 3D Analytical Geometry with formula reference sheets.",
     tags: ["CALCULUS", "DIFF EQUATIONS", "LINEAR ALGEBRA", "VECTOR CALCULUS", "FORMULA SHEET"]
@@ -36,9 +38,10 @@ const SUBJECTS_DATA = [
     code: "EX 152 / CT 152",
     semester: "Semester I/II",
     marks: "80 Marks Weightage",
-    pages: "Comprehensive Packet",
-    fileSize: "PDF Ready",
-    pdfUrl: "downloads/digital_logic_master.pdf",
+    pages: "In Progress",
+    fileSize: "Upcoming",
+    pdfUrl: null,
+    isReady: false,
     featured: false,
     desc: "Number Systems & Codes, Boolean Algebra & K-Maps, Combinational Logic Circuits (Mux/Demux/Encoders), Sequential Circuits, Flip-Flops, Counters, Registers, and Synchronous FSM Design.",
     tags: ["BOOLEAN ALGEBRA", "K-MAPS", "COMBINATIONAL", "SEQUENTIAL", "COUNTERS & FSM"]
@@ -49,9 +52,10 @@ const SUBJECTS_DATA = [
     code: "CT 153",
     semester: "Semester I/II",
     marks: "80 Marks Weightage",
-    pages: "Comprehensive Packet",
-    fileSize: "PDF Ready",
-    pdfUrl: "downloads/object_oriented_programming_master.pdf",
+    pages: "In Progress",
+    fileSize: "Upcoming",
+    pdfUrl: null,
+    isReady: false,
     featured: false,
     desc: "C++ Object Oriented Programming, Classes & Objects, Constructor Overloading, Operator Overloading, Inheritance Hierarchies, Virtual Functions, Polymorphism, Templates, and File Handling.",
     tags: ["C++ PROGRAMMING", "OPERATOR OVERLOADING", "INHERITANCE", "POLYMORPHISM", "FILE I/O"]
@@ -62,9 +66,10 @@ const SUBJECTS_DATA = [
     code: "EX 151",
     semester: "Semester I/II",
     marks: "80 Marks Weightage",
-    pages: "Comprehensive Packet",
-    fileSize: "PDF Ready",
-    pdfUrl: "downloads/electronic_devices_and_circuits_master.pdf",
+    pages: "In Progress",
+    fileSize: "Upcoming",
+    pdfUrl: null,
+    isReady: false,
     featured: false,
     desc: "Semiconductor Physics, PN Junction Diodes, Zener Regulators, BJT Small Signal Analysis, JFET & MOSFET Amplifiers, Frequency Response, Operational Amplifiers (Op-Amps), and Feedback Oscillators.",
     tags: ["SEMICONDUCTORS", "BJT AMPLIFIERS", "MOSFET", "OP-AMPS", "FREQUENCY RESPONSE"]
@@ -75,9 +80,10 @@ const SUBJECTS_DATA = [
     code: "SH 153",
     semester: "Semester I/II",
     marks: "80 Marks Weightage",
-    pages: "Comprehensive Packet",
-    fileSize: "PDF Ready",
-    pdfUrl: "downloads/engineering_chemistry_master.pdf",
+    pages: "In Progress",
+    fileSize: "Upcoming",
+    pdfUrl: null,
+    isReady: false,
     featured: false,
     desc: "Electrochemistry & Batteries, Corrosion & its Prevention, Synthetic Polymers, Water Quality Parameters & Treatment, Phase Rule & Phase Diagrams, Fuels, and Instrumental Analytical Methods.",
     tags: ["ELECTROCHEMISTRY", "CORROSION", "POLYMERS", "WATER TREATMENT", "PHASE RULE"]
@@ -114,7 +120,7 @@ function renderSubjectSlots(subjects) {
       <div>
         <div class="card-top-meta">
           <span class="course-code-badge">${s.code}</span>
-          ${s.featured ? '<span class="featured-flag">55-PAGE MASTER BOOK</span>' : `<span class="mono" style="font-size:0.75rem; color:var(--text-muted);">${s.semester}</span>`}
+          ${s.isReady ? '<span class="featured-flag">READY · 55-PAGE BOOK</span>' : '<span class="in-progress-flag">ARYA IS SOLVING</span>'}
         </div>
         
         <h2 class="subject-title">${s.title}</h2>
@@ -126,12 +132,21 @@ function renderSubjectSlots(subjects) {
       </div>
       
       <div class="card-actions-row">
-        <a href="${s.pdfUrl}" class="btn-download-primary" download="${s.title.replace(/[^a-zA-Z0-9]/g, '_')}_IOE.pdf">
-          <span>↓ DOWNLOAD PDF</span>
-        </a>
-        <button class="btn-preview-secondary" onclick="openPdfModal('${s.pdfUrl}', '${s.title} (${s.code})')" title="Preview in browser">
-          <span>PREVIEW</span>
-        </button>
+        ${s.isReady ? `
+          <a href="${s.pdfUrl}" class="btn-download-primary" download="Electrical_Circuits_and_Machines_Master_Solutions_IOE.pdf">
+            <span>↓ DOWNLOAD PDF</span>
+          </a>
+          <button class="btn-preview-secondary" onclick="openPdfModal('${s.pdfUrl}', '${s.title} (${s.code})')" title="Preview in browser">
+            <span>PREVIEW</span>
+          </button>
+        ` : `
+          <button class="btn-download-primary" onclick="openAryaSolvingModal('${s.title}', '${s.code}')">
+            <span>↓ DOWNLOAD PDF</span>
+          </button>
+          <button class="btn-preview-secondary" onclick="openAryaSolvingModal('${s.title}', '${s.code}')" title="Preview in browser">
+            <span>PREVIEW</span>
+          </button>
+        `}
       </div>
     </div>
   `).join('');
@@ -155,7 +170,7 @@ function handleSearch(query) {
   renderSubjectSlots(filtered);
 }
 
-// In-App PDF Previewer Modal
+// Modal for Ready PDF Preview
 function openPdfModal(url, title) {
   const modal = document.getElementById('pdf-modal-backdrop');
   const frame = document.getElementById('pdf-iframe');
@@ -181,6 +196,50 @@ function closePdfModal() {
   }
 }
 
+// Modal for Unfinished Subjects: "Arya is solving them right now"
+function openAryaSolvingModal(subjectTitle, subjectCode) {
+  const modal = document.getElementById('arya-modal-backdrop');
+  const titleEl = document.getElementById('arya-modal-subject-title');
+  const subEl = document.getElementById('arya-modal-subject-code');
+  
+  if (modal) {
+    if (titleEl) titleEl.innerText = subjectTitle;
+    if (subEl) subEl.innerText = subjectCode;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeAryaModal() {
+  const modal = document.getElementById('arya-modal-backdrop');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function notifyAryaPriority() {
+  showToast('⚡ Priority Vote Recorded! Arya notified to finish this next.');
+  setTimeout(() => {
+    closeAryaModal();
+  }, 1200);
+}
+
+// Toast Alert
+function showToast(text) {
+  let shelf = document.querySelector('.toast-shelf');
+  if (!shelf) {
+    shelf = document.createElement('div');
+    shelf.className = 'toast-shelf';
+    document.body.appendChild(shelf);
+  }
+  const pill = document.createElement('div');
+  pill.className = 'toast-pill';
+  pill.innerText = text;
+  shelf.appendChild(pill);
+  setTimeout(() => pill.remove(), 2500);
+}
+
 // Theme Switcher
 function applyTheme(theme) {
   currentTheme = theme;
@@ -203,9 +262,15 @@ function setupListeners() {
   
   document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
   document.getElementById('close-pdf-modal-btn')?.addEventListener('click', closePdfModal);
+  document.getElementById('close-arya-modal-btn')?.addEventListener('click', closeAryaModal);
+  document.getElementById('arya-modal-close-action-btn')?.addEventListener('click', closeAryaModal);
+  document.getElementById('arya-priority-btn')?.addEventListener('click', notifyAryaPriority);
   
   document.getElementById('pdf-modal-backdrop')?.addEventListener('click', (e) => {
     if (e.target.id === 'pdf-modal-backdrop') closePdfModal();
+  });
+  document.getElementById('arya-modal-backdrop')?.addEventListener('click', (e) => {
+    if (e.target.id === 'arya-modal-backdrop') closeAryaModal();
   });
   
   // Keyboard Shortcuts
@@ -222,6 +287,7 @@ function setupListeners() {
       toggleTheme();
     } else if (e.key === 'Escape') {
       closePdfModal();
+      closeAryaModal();
     }
   });
 }

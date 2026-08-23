@@ -58,7 +58,7 @@
     </div>
   </main>
 
-  <!-- PDF In-Browser Previewer Modal -->
+  <!-- Ready PDF In-Browser Previewer Modal -->
   <div class="modal-backdrop" id="pdf-modal-backdrop">
     <div class="modal-dialog">
       <div class="modal-header">
@@ -70,6 +70,39 @@
       </div>
       <div class="modal-body">
         <iframe id="pdf-iframe" class="pdf-iframe" src="" title="PDF Document Viewer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- In-Progress Modal: "Arya is solving them right now" -->
+  <div class="modal-backdrop" id="arya-modal-backdrop">
+    <div class="modal-dialog narrow">
+      <div class="modal-header">
+        <span class="modal-title" style="font-size: 0.8rem;">IN PROGRESS · ARYA IS ON IT</span>
+        <button class="btn-pill" id="close-arya-modal-btn">CLOSE ✕</button>
+      </div>
+      <div class="modal-body padded">
+        <!-- Artwork of Arya solving solutions -->
+        <div class="arya-image-container">
+          <img src="assets/images/arya_solving.jpg" alt="Arya is solving them right now" class="arya-image" />
+        </div>
+
+        <h3 class="arya-modal-heading">
+          Arya is solving <span id="arya-modal-subject-title" style="text-decoration: underline;">this subject</span> right now!
+        </h3>
+        
+        <p class="arya-modal-text">
+          Arya is currently busy solving, verifying, and typesetting all past IOE question solutions and circuit diagrams for <strong id="arya-modal-subject-code">this course</strong>. Check back soon for the verified master PDF!
+        </p>
+
+        <div class="arya-modal-actions">
+          <button class="btn-download-primary" id="arya-priority-btn">
+            <span>⚡ REQUEST ARYA'S PRIORITY</span>
+          </button>
+          <button class="btn-preview-secondary" id="arya-modal-close-action-btn">
+            <span>GOT IT, TAKE YOUR TIME!</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
