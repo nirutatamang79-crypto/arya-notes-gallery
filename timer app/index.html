@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCT Exam Countdown | 2083 B.S. / 2026 A.D. (1:00 PM NPT)</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Modern Typography Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css?v=20830515_v2">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Top Header Bar -->
+    <header class="header-bar">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>BCT Exam Countdown</h1>
+          <p class="subtitle">IOE Tribhuvan University • 2083 Bhadra Schedule (1:00 PM NPT)</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Live Kathmandu Clock -->
+        <div class="live-clock-badge" id="live-clock">
+          --:--:-- NPT
+        </div>
+
+        <button class="control-btn" id="export-cal-btn" title="Export schedule to Apple/Google Calendar (.ics)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Export .ics
+        </button>
+
+        <button class="control-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          Theme
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Spotlight Section (Next Upcoming Exam) -->
+    <section class="hero-card" id="hero-spotlight">
+      <div class="hero-badge-row">
+        <span class="hero-target-pill">
+          <span class="pulse-dot"></span>
+          NEXT UPCOMING EXAM
+        </span>
+        <button class="zen-btn" onclick="openZenMode()" title="Fullscreen Zen Focus Mode">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+          Zen Mode
+        </button>
+      </div>
+
+      <div class="hero-subject-meta">
+        <span class="hero-code" id="hero-code">ENSH 151</span>
+        <h2 class="hero-title" id="hero-title">Engineering Mathematics II</h2>
+        <div class="hero-dates-meta">
+          <span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <strong style="color:var(--accent-amber);" id="hero-date-bs">2083-05-23 B.S.</strong>
+          </span>
+          <span>•</span>
+          <span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span id="hero-date-ad">September 8, 2026 • 1:00 PM NPT</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Large Countdown Grid -->
+      <div class="hero-timer-grid">
+        <div class="hero-unit-card">
+          <span class="hero-unit-value" id="hero-days">00</span>
+          <span class="hero-unit-label">Days Left</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-value" id="hero-hours">00</span>
+          <span class="hero-unit-label">Hours Left</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-value" id="hero-mins">00</span>
+          <span class="hero-unit-label">Minutes Left</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-value" id="hero-secs">00</span>
+          <span class="hero-unit-label">Seconds Left</span>
+        </div>
+      </div>
+
+      <!-- Progress Track -->
+      <div class="hero-progress-wrapper">
+        <div class="progress-labels">
+          <span>Preparation Timeline</span>
+          <span id="hero-progress-percent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar-fill" id="hero-progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section Header -->
+    <section class="schedule-section">
+      <div class="section-header">
+        <div class="section-title">
+          <span>All Subject Exam Timers</span>
+          <span class="section-badge">6 Theory Exams • 1:00 PM NPT</span>
+        </div>
+
+        <div class="view-options">
+          <button class="view-btn active" id="view-grid-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            Cards
+          </button>
+          <button class="view-btn" id="view-table-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            Table
+          </button>
+          <button class="view-btn" id="view-timeline-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            Timeline
+          </button>
+        </div>
+      </div>
+
+      <!-- View Containers -->
+      <div class="cards-grid" id="cards-grid-container"></div>
+      <div class="table-view-container" id="table-view-container" style="display:none;"></div>
+      <div class="timeline-view-container" id="timeline-view-container" style="display:none;"></div>
+    </section>
+
+    <!-- Quick Tools & Guidelines Section -->
+    <section class="quick-tools-grid">
+      <div class="tool-box">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Calendar Sync
+        </h3>
+        <p>Import all 6 exam events directly into Apple Calendar, Google Calendar, or Outlook with automated 24-hour reminder alerts.</p>
+        <div class="action-btn-row">
+          <button class="control-btn" id="export-cal-btn-2">Download .ics File</button>
+          <button class="control-btn" id="notify-btn">Enable Alerts</button>
+        </div>
+      </div>
+
+      <div class="tool-box">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          Exam Day Key Information
+        </h3>
+        <p>All examinations start sharply at <strong>1:00 PM Nepal Time (13:00 NPT)</strong> and conclude at <strong>4:00 PM</strong> (3 Hours). Ensure arrival at center by 12:30 PM with Admit Card.</p>
+      </div>
+
+      <div class="tool-box">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          Study Focus Strategy
+        </h3>
+        <p>Use the <strong>Zen Mode</strong> button on any card during revision blocks to lock in and eliminate external distractions.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>BCT Computer Engineering • Academic Year 2083 B.S. / 2026 A.D. • Timezone: Kathmandu (NPT, UTC+5:45)</p>
+      <p>Precision Countdown Timer • Built with pure HTML, CSS & Vanilla JS</p>
+    </footer>
+
+  </div>
+
+  <!-- Zen / Focus Mode Modal -->
+  <div class="zen-modal" id="zen-modal">
+    <button class="zen-close-btn" id="zen-close-btn" title="Close Focus Mode (Esc)">✕</button>
+    <div class="zen-content">
+      <div class="zen-subject-badge" id="zen-code">ENSH 151</div>
+      <h1 class="zen-subject-title" id="zen-title">Engineering Mathematics II</h1>
+      <p class="zen-dates" id="zen-dates">2083-05-23 B.S. • September 8, 2026 (1:00 PM NPT)</p>
+
+      <div class="zen-timer-grid">
+        <div class="zen-unit-box">
+          <div class="zen-unit-val" id="zen-days">00</div>
+          <div class="zen-unit-lbl">Days Left</div>
+        </div>
+        <div class="zen-unit-box">
+          <div class="zen-unit-val" id="zen-hours">00</div>
+          <div class="zen-unit-lbl">Hours Left</div>
+        </div>
+        <div class="zen-unit-box">
+          <div class="zen-unit-val" id="zen-mins">00</div>
+          <div class="zen-unit-lbl">Minutes Left</div>
+        </div>
+        <div class="zen-unit-box">
+          <div class="zen-unit-val" id="zen-secs">00</div>
+          <div class="zen-unit-lbl">Seconds Left</div>
+        </div>
+      </div>
+
+      <!-- Total Accumulated Units Bar -->
+      <div class="zen-totals-wrapper">
+        <div class="zen-totals-title">Total Cumulative Time Remaining</div>
+        <div class="zen-totals-grid">
+          <div class="zen-total-card">
+            <span class="zen-total-val" id="zen-total-hours">0</span>
+            <span class="zen-total-lbl">Total Hours Left</span>
+          </div>
+          <div class="zen-total-card highlight-card">
+            <span class="zen-total-val" id="zen-total-minutes">0</span>
+            <span class="zen-total-lbl">Total Minutes Left</span>
+          </div>
+          <div class="zen-total-card">
+            <span class="zen-total-val" id="zen-total-seconds">0</span>
+            <span class="zen-total-lbl">Total Seconds Left</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="zen-quote">"Stay focused, consistent effort leads to mastery."</p>
+    </div>
+  </div>
+
+  <script src="app.js?v=20830515_v2"></script>
+</body>
+</html>
