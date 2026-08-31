@@ -69,6 +69,12 @@
         <span class="mono" id="sound-toggle-text">SFX: ON</span>
       </button>
 
+      <!-- 2083 Leaked Papers Notice Modal Trigger -->
+      <button class="btn-pill leaked-header-btn mono" id="header-leaked-btn" onclick="openLeakedNoticeModal()" title="View 2083 2nd Sem Leaked Question Papers & Predictions (L)">
+        <span class="pulse-red-dot"></span>
+        <span class="leaked-btn-text">🚨 2083 LEAKED PAPERS</span>
+      </button>
+
       <!-- Scroll to Timer Shortcut -->
       <a href="#exam-timer-section" class="btn-pill" title="Jump to BCT Exam Countdown Timer">
         <span class="mono">TIMERS</span>
@@ -155,9 +161,9 @@
           <span class="hero-code-badge mono" id="hero-code">ENSH 151</span>
           <h3 class="hero-title" id="hero-title">Engineering Mathematics II</h3>
           <div class="hero-dates-meta mono">
-            <span id="hero-date-bs">2083-05-16 B.S.</span>
+            <span id="hero-date-bs">2083-05-23 B.S.</span>
             <span>·</span>
-            <span id="hero-date-ad">September 1, 2026 · 1:00 PM NPT</span>
+            <span id="hero-date-ad">September 8, 2026 · 1:00 PM NPT</span>
           </div>
         </div>
 
@@ -367,13 +373,198 @@
     </div>
   </div>
 
+  <!-- =========================================================================
+       2083 Leaked Question Papers & Exam Prediction Alert Modal
+       ========================================================================= -->
+  <div class="modal-backdrop" id="leaked-notice-modal-backdrop">
+    <div class="modal-dialog leaked-notice-dialog">
+      <!-- Modal Header -->
+      <div class="modal-header leaked-modal-header">
+        <div class="modal-header-left">
+          <span class="pulse-red-dot"></span>
+          <span class="modal-title">🚨 2083 Exam Notice · Leaked Questions & Predictions</span>
+          <span class="modal-meta-tag mono leaked-tag">BCT 2ND SEMESTER</span>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn-icon btn-close mono" onclick="closeLeakedNoticeModal()" title="Close Alert (Esc)">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body leaked-modal-body">
+        
+        <!-- Emergency Notice Banner -->
+        <div class="leaked-banner">
+          <div class="leaked-banner-icon">⚡</div>
+          <div class="leaked-banner-content">
+            <h3 class="leaked-banner-title">HIGH-YIELD 2083 B.S. EXAM PREDICTIONS & REPEATED PAPERS</h3>
+            <p class="leaked-banner-desc">
+              All 6 master subjects for the <strong>IOE BCT/BEX 2083 2nd Semester Examination</strong> (Starts <strong>Sept 8, 2026 / 2083-05-23</strong>). Access verified numerical steps, derivations, and question papers below.
+            </p>
+          </div>
+        </div>
+
+        <!-- Subject Leaked Question Matrix Cards -->
+        <div class="leaked-subjects-grid">
+          
+          <!-- Subject 1: Math II -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-math);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENSH 151</span>
+                <span class="leaked-subj-name">Engineering Mathematics II</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 8 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>Beta & Gamma Functions:</strong> $\Gamma(n)\Gamma(1-n) = \frac{\pi}{\sin n\pi}$ proofs & evaluation.</li>
+                <li>🎯 <strong>2nd Order ODE:</strong> Variation of parameters & Cauchy-Euler equations.</li>
+                <li>🎯 <strong>Fourier Series & PDE:</strong> 1D Heat / Wave equation boundary value problems.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('math')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/math/Math Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+          <!-- Subject 2: EDC -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-edc);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENEX 151</span>
+                <span class="leaked-subj-name">Electronic Devices & Circuits</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 12 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>BJT Small Signal Analysis:</strong> $r_e$ and Hybrid-$\pi$ model for $A_v, Z_i, Z_o$.</li>
+                <li>🎯 <strong>MOSFET & CMOS:</strong> Inverter Voltage Transfer Characteristics (VTC).</li>
+                <li>🎯 <strong>Op-Amp Circuits:</strong> Active Butterworth filters & Schmitt triggers.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('edc')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/edc/EDC Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+          <!-- Subject 3: Chemistry -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-chem);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENSH 153</span>
+                <span class="leaked-subj-name">Engineering Chemistry</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 16 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>Phase Rule & Alloys:</strong> Pb-Ag 2-component system & Pattinson's process.</li>
+                <li>🎯 <strong>Corrosion & Protection:</strong> Galvanic & differential aeration corrosion.</li>
+                <li>🎯 <strong>Polymers & Lubricants:</strong> Conducting polymers, flash/fire point mechanisms.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('chem')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/chem/Chemistry Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+          <!-- Subject 4: OOP -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-oop);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENCT 151</span>
+                <span class="leaked-subj-name">Object Oriented Programming</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 20 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>Virtual Functions & Polymorphism:</strong> Pure virtual & abstract base class.</li>
+                <li>🎯 <strong>Operator Overloading:</strong> Binary `+`, stream `<<` & `>>` friends.</li>
+                <li>🎯 <strong>Templates & Exceptions:</strong> Generic stack/queue & try-catch-throw.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('oop')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/oop/OOP Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+          <!-- Subject 5: Digital Logic -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-dl);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENEX 152</span>
+                <span class="leaked-subj-name">Digital Logic</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 24 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>Synchronous Counter:</strong> MOD-6 / MOD-10 with JK & D Flip-Flops.</li>
+                <li>🎯 <strong>State Machine (FSM):</strong> Mealy/Moore sequence detector (1011/1101).</li>
+                <li>🎯 <strong>Logic Families:</strong> 2-input TTL NAND & CMOS NOR circuit schematics.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('dl')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/dl/Digital Logic Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+          <!-- Subject 6: ECM -->
+          <div class="leaked-subject-card" style="--subj-accent: var(--accent-ecm);">
+            <div class="leaked-card-header">
+              <div class="leaked-subj-info">
+                <span class="leaked-subj-code mono">ENEE 154</span>
+                <span class="leaked-subj-name">Electrical Circuits & Machines</span>
+              </div>
+              <span class="leaked-badge mono">SEPT 28 · 1:00 PM</span>
+            </div>
+            <div class="leaked-card-content">
+              <ul class="leaked-points mono">
+                <li>🎯 <strong>Mesh & Nodal Matrix:</strong> Supernode dependent sources (39 master questions).</li>
+                <li>🎯 <strong>3-Phase Systems:</strong> Star-Delta unbalanced power & 2-wattmeter method.</li>
+                <li>🎯 <strong>Transformers & DC Machines:</strong> Equivalent circuit, efficiency & EMF equation.</li>
+              </ul>
+            </div>
+            <div class="leaked-card-actions">
+              <button class="btn-pill btn-compact mono" onclick="handleLeakedOpenSubject('ecm')">VIEW QUESTIONS ↗</button>
+              <a href="downloads/ecm/ECM Solutions.pdf" download class="btn-pill btn-compact active mono" onclick="sfx.playHapticPop()">DOWNLOAD PDF</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Action Callouts -->
+        <div class="leaked-modal-footer-box">
+          <div class="leaked-footer-left">
+            <span class="mono" style="font-size:0.78rem; color:var(--text-muted);">
+              💡 <strong>Exam Strategy:</strong> Master all 6 subject solutions to secure distinction (80%+).
+            </span>
+          </div>
+          <div class="leaked-footer-actions">
+            <button class="btn-pill mono" onclick="handleLeakedGoToTimers()">⏱️ VIEW EXAM TIMERS</button>
+            <button class="btn-pill active mono" onclick="handleLeakedExploreAll()">🔥 ACCESS ALL SOLUTIONS</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- Zen Focus Mode Fullscreen Overlay -->
   <div class="zen-overlay" id="zen-overlay">
     <button class="zen-exit-btn mono" id="zen-exit-btn" onclick="closeZenMode()">EXIT ZEN (ESC)</button>
     <div class="zen-content">
       <span class="zen-code-badge mono" id="zen-code">ENSH 151</span>
       <h1 class="zen-title" id="zen-title">Engineering Mathematics II</h1>
-      <p class="zen-date mono" id="zen-date">September 1, 2026 · 1:00 PM NPT</p>
+      <p class="zen-date mono" id="zen-date">September 8, 2026 · 1:00 PM NPT</p>
       
       <div class="zen-timer-grid mono">
         <div class="zen-unit">

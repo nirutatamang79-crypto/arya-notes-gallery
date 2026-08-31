@@ -93,17 +93,17 @@ const SUBJECTS_DATA = [
   }
 ];
 
-// BCT 2083 Exam Schedule (1:00 PM NPT, Asia/Kathmandu, UTC+5:45)
+// BCT 2083 Exam Schedule (1:00 PM NPT, Asia/Kathmandu, UTC+5:45) - Revised as of 2083-05-15
 const EXAM_SCHEDULE = [
   {
     id: 'ensh151',
     subjectId: 'math',
     code: 'ENSH 151',
     name: 'Engineering Mathematics II',
-    dateBS: '2083-05-16',
-    dateAD: 'September 1, 2026',
-    targetDateStr: '2026-09-01T13:00:00+05:45',
-    endDateStr: '2026-09-01T16:00:00+05:45',
+    dateBS: '2083-05-23',
+    dateAD: 'September 8, 2026',
+    targetDateStr: '2026-09-08T13:00:00+05:45',
+    endDateStr: '2026-09-08T16:00:00+05:45',
     accent: 'var(--accent-math)',
     accentHex: '#7c3aed'
   },
@@ -112,10 +112,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'edc',
     code: 'ENEX 151',
     name: 'Electronic Device & Circuit',
-    dateBS: '2083-05-20',
-    dateAD: 'September 5, 2026',
-    targetDateStr: '2026-09-05T13:00:00+05:45',
-    endDateStr: '2026-09-05T16:00:00+05:45',
+    dateBS: '2083-05-27',
+    dateAD: 'September 12, 2026',
+    targetDateStr: '2026-09-12T13:00:00+05:45',
+    endDateStr: '2026-09-12T16:00:00+05:45',
     accent: 'var(--accent-edc)',
     accentHex: '#0284c7'
   },
@@ -124,10 +124,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'chem',
     code: 'ENSH 153',
     name: 'Engineering Chemistry',
-    dateBS: '2083-05-24',
-    dateAD: 'September 9, 2026',
-    targetDateStr: '2026-09-09T13:00:00+05:45',
-    endDateStr: '2026-09-09T16:00:00+05:45',
+    dateBS: '2083-05-31',
+    dateAD: 'September 16, 2026',
+    targetDateStr: '2026-09-16T13:00:00+05:45',
+    endDateStr: '2026-09-16T16:00:00+05:45',
     accent: 'var(--accent-chem)',
     accentHex: '#0d9488'
   },
@@ -136,10 +136,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'oop',
     code: 'ENCT 151',
     name: 'Object Oriented Programming',
-    dateBS: '2083-05-28',
-    dateAD: 'September 13, 2026',
-    targetDateStr: '2026-09-13T13:00:00+05:45',
-    endDateStr: '2026-09-13T16:00:00+05:45',
+    dateBS: '2083-06-04',
+    dateAD: 'September 20, 2026',
+    targetDateStr: '2026-09-20T13:00:00+05:45',
+    endDateStr: '2026-09-20T16:00:00+05:45',
     accent: 'var(--accent-oop)',
     accentHex: '#e11d48'
   },
@@ -148,10 +148,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'dl',
     code: 'ENEX 152',
     name: 'Digital Logics',
-    dateBS: '2083-06-01',
-    dateAD: 'September 17, 2026',
-    targetDateStr: '2026-09-17T13:00:00+05:45',
-    endDateStr: '2026-09-17T16:00:00+05:45',
+    dateBS: '2083-06-08',
+    dateAD: 'September 24, 2026',
+    targetDateStr: '2026-09-24T13:00:00+05:45',
+    endDateStr: '2026-09-24T16:00:00+05:45',
     accent: 'var(--accent-dl)',
     accentHex: '#059669'
   },
@@ -160,10 +160,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'ecm',
     code: 'ENEE 154',
     name: 'Electrical Circuit & Machines',
-    dateBS: '2083-06-05',
-    dateAD: 'September 21, 2026',
-    targetDateStr: '2026-09-21T13:00:00+05:45',
-    endDateStr: '2026-09-21T16:00:00+05:45',
+    dateBS: '2083-06-12',
+    dateAD: 'September 28, 2026',
+    targetDateStr: '2026-09-28T13:00:00+05:45',
+    endDateStr: '2026-09-28T16:00:00+05:45',
     accent: 'var(--accent-ecm)',
     accentHex: '#d97706'
   }
@@ -338,6 +338,39 @@ class SoundFXEngine {
     osc.start(now);
     osc.stop(now + 0.015);
   }
+
+  // 5. Crisp Two-Tone Notification Alert Bell Chime (for Leaked Questions & Urgent Notices)
+  playAlertChime() {
+    this.triggerHaptic('double');
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+
+    // First tone (E5 ~ 659.25 Hz)
+    const osc1 = this.ctx.createOscillator();
+    const gain1 = this.ctx.createGain();
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(659.25, now);
+    gain1.gain.setValueAtTime(0.28, now);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
+    osc1.connect(gain1);
+    gain1.connect(this.ctx.destination);
+    osc1.start(now);
+    osc1.stop(now + 0.26);
+
+    // Second higher harmonic tone (A5 ~ 880 Hz)
+    const osc2 = this.ctx.createOscillator();
+    const gain2 = this.ctx.createGain();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(880, now + 0.11);
+    gain2.gain.setValueAtTime(0.35, now + 0.11);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+    osc2.connect(gain2);
+    gain2.connect(this.ctx.destination);
+    osc2.start(now + 0.11);
+    osc2.stop(now + 0.45);
+  }
 }
 
 const sfx = new SoundFXEngine();
@@ -421,6 +454,10 @@ function run5SecondAppLoader() {
         sfx.playHapticPop();
         setTimeout(() => {
           if (loader.parentNode) loader.parentNode.removeChild(loader);
+          // Auto-trigger the Leaked Question Papers & Predictions Alert Modal on app open
+          setTimeout(() => {
+            openLeakedNoticeModal(true);
+          }, 350);
         }, 550);
       }, 100);
     }
@@ -1570,6 +1607,9 @@ function setupListeners() {
   document.getElementById('pdf-modal-backdrop')?.addEventListener('click', (e) => {
     if (e.target.id === 'pdf-modal-backdrop') closePdfModal();
   });
+  document.getElementById('leaked-notice-modal-backdrop')?.addEventListener('click', (e) => {
+    if (e.target.id === 'leaked-notice-modal-backdrop') closeLeakedNoticeModal();
+  });
 
   // Tactile Scroll Sound Listener (Responsive & Haptic)
   window.addEventListener('scroll', () => {
@@ -1602,15 +1642,98 @@ function setupListeners() {
       toggleTheme();
     } else if (e.key === 'r' || e.key === 'R') {
       pickRandomSubject();
+    } else if (e.key === 'l' || e.key === 'L') {
+      openLeakedNoticeModal();
     } else if (e.key === 'z' || e.key === 'Z') {
       openZenMode();
     } else if (e.key === 'Escape') {
       closePdfModal();
       closeVisitorsModal();
       closeLeaveReviewModal();
+      closeLeakedNoticeModal();
       closeZenMode();
     }
   });
+}
+
+// ==============================================================================
+// 2083 Leaked Question Papers & Predictions Alert Modal Engine
+// ==============================================================================
+
+function openLeakedNoticeModal(autoLaunched = false) {
+  const modal = document.getElementById('leaked-notice-modal-backdrop');
+  if (!modal) return;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  if (sfx) {
+    sfx.playAlertChime();
+  }
+
+  if (autoLaunched) {
+    showToast('🚨 Alert: 2083 2nd Sem Leaked Papers & Predictions Loaded!');
+  } else {
+    showToast('Opened 2083 Leaked Question Papers Notice');
+  }
+}
+
+function closeLeakedNoticeModal() {
+  const modal = document.getElementById('leaked-notice-modal-backdrop');
+  if (!modal) return;
+
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  if (sfx) sfx.playHapticTap();
+}
+
+function handleLeakedOpenSubject(subjId) {
+  closeLeakedNoticeModal();
+  if (sfx) sfx.playHapticTap();
+
+  // Find subject card in DOM
+  const slot = document.querySelector(`.subject-slot[data-id="${subjId}"]`);
+  if (slot) {
+    slot.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    slot.classList.remove('leaked-target-highlight');
+    void slot.offsetWidth;
+    slot.classList.add('leaked-target-highlight');
+  }
+
+  // Open the PDF viewer
+  const subj = SUBJECTS_DATA.find(s => s.id === subjId);
+  if (subj) {
+    setTimeout(() => {
+      openPdfModal(subj.solutionsPdf, `${subj.title} — Master Solutions`);
+    }, 450);
+  }
+}
+
+function handleLeakedExploreAll() {
+  closeLeakedNoticeModal();
+  if (sfx) sfx.playHapticPop();
+  
+  const grid = document.getElementById('subject-grid');
+  if (grid) {
+    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.subject-slot').forEach(slot => {
+      slot.classList.remove('leaked-target-highlight');
+      void slot.offsetWidth;
+      slot.classList.add('leaked-target-highlight');
+    });
+  }
+  showToast('🔥 Displaying all 6 subject master solutions');
+}
+
+function handleLeakedGoToTimers() {
+  closeLeakedNoticeModal();
+  if (sfx) sfx.playHapticTap();
+
+  const timerSection = document.getElementById('exam-timer-section');
+  if (timerSection) {
+    timerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  showToast('⏱️ BCT 2083 Exam Countdown Timers');
 }
 
 // Temporal Wavy Time Motion Ripple on Tap / Click

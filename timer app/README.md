@@ -11,12 +11,12 @@ A sleek, responsive, and distraction-free countdown timer designed for **BCT (Co
 
 | Subject Code | Subject Name | Nepali Date (B.S.) | English Date (A.D.) | Time (NPT) |
 | :--- | :--- | :--- | :--- | :--- |
-| **ENSH 151** | Engineering Mathematics II | 2083-05-16 | September 1, 2026 | 1:00 PM |
-| **ENEX 151** | Electronic Device & Circuit | 2083-05-20 | September 5, 2026 | 1:00 PM |
-| **ENSH 153** | Engineering Chemistry | 2083-05-24 | September 9, 2026 | 1:00 PM |
-| **ENCT 151** | Object Oriented Programming | 2083-05-28 | September 13, 2026 | 1:00 PM |
-| **ENEX 152** | Digital Logics | 2083-06-01 | September 17, 2026 | 1:00 PM |
-| **ENEE 154** | Electrical Circuit & Machines | 2083-06-05 | September 21, 2026 | 1:00 PM |
+| **ENSH 151** | Engineering Mathematics II | 2083-05-23 | September 8, 2026 | 1:00 PM |
+| **ENEX 151** | Electronic Device & Circuit | 2083-05-27 | September 12, 2026 | 1:00 PM |
+| **ENSH 153** | Engineering Chemistry | 2083-05-31 | September 16, 2026 | 1:00 PM |
+| **ENCT 151** | Object Oriented Programming | 2083-06-04 | September 20, 2026 | 1:00 PM |
+| **ENEX 152** | Digital Logics | 2083-06-08 | September 24, 2026 | 1:00 PM |
+| **ENEE 154** | Electrical Circuit & Machines | 2083-06-12 | September 28, 2026 | 1:00 PM |
 
 ---
 

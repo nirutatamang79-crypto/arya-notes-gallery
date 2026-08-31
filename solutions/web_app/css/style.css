@@ -2001,3 +2001,299 @@ button {
   padding-top: 1rem;
 }
 
+/* ==============================================================================
+   2083 Leaked Questions & Exam Predictions Notification Alert Modal & Buttons
+   ============================================================================== */
+
+.pulse-red-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.85);
+  animation: pulse-red-anim 1.6s infinite ease-in-out;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-red-anim {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.85);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+    box-shadow: 0 0 2px rgba(239, 68, 68, 0.3);
+  }
+}
+
+.leaked-header-btn {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  animation: leaked-btn-glow 3s infinite ease-in-out;
+}
+
+.leaked-header-btn:hover {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes leaked-btn-glow {
+  0%, 100% {
+    border-color: rgba(239, 68, 68, 0.35);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.8);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+  }
+}
+
+/* Leaked Notice Modal Dialog */
+.leaked-notice-dialog {
+  width: 95%;
+  max-width: 860px;
+  max-height: 90vh;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(239, 68, 68, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.28s var(--spring-bounce);
+}
+
+.modal-backdrop.open .leaked-notice-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.leaked-modal-header {
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.leaked-tag {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.leaked-modal-body {
+  padding: 1.25rem;
+  background: var(--bg-page);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* Emergency Notice Banner */
+.leaked-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="dark"] .leaked-banner {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.leaked-banner-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.leaked-banner-content {
+  flex: 1;
+}
+
+.leaked-banner-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ef4444;
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.leaked-banner-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* 2-Column Subject Grid */
+.leaked-subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .leaked-subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leaked-subject-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-left: 4px solid var(--subj-accent, var(--border-strong));
+  border-radius: var(--radius-sm);
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.leaked-subject-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.leaked-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.leaked-subj-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.leaked-subj-code {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.leaked-subj-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.leaked-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.leaked-card-content {
+  flex: 1;
+}
+
+.leaked-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.leaked-points li {
+  padding-left: 0.1rem;
+}
+
+.leaked-points strong {
+  color: var(--text-main);
+}
+
+.leaked-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* Leaked Modal Footer */
+.leaked-modal-footer-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  margin-top: 0.25rem;
+}
+
+.leaked-footer-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.leaked-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Highlighting animation when jumping to a subject */
+.subject-slot.leaked-target-highlight {
+  animation: target-highlight-pulse 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes target-highlight-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    border-color: #ef4444;
+  }
+  30% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.25);
+    border-color: #ef4444;
+  }
+  70% {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+
