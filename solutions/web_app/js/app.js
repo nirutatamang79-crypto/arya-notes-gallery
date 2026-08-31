@@ -454,10 +454,6 @@ function run5SecondAppLoader() {
         sfx.playHapticPop();
         setTimeout(() => {
           if (loader.parentNode) loader.parentNode.removeChild(loader);
-          // Auto-trigger the Leaked Question Papers & Predictions Alert Modal on app open
-          setTimeout(() => {
-            openLeakedNoticeModal(true);
-          }, 350);
         }, 550);
       }, 100);
     }
@@ -1657,10 +1653,10 @@ function setupListeners() {
 }
 
 // ==============================================================================
-// 2083 Leaked Question Papers & Predictions Alert Modal Engine
+// 2083 Leaked Question Papers Meme Modal Engine (Suspicious Side-Eye Dog)
 // ==============================================================================
 
-function openLeakedNoticeModal(autoLaunched = false) {
+function openLeakedNoticeModal() {
   const modal = document.getElementById('leaked-notice-modal-backdrop');
   if (!modal) return;
 
@@ -1671,11 +1667,7 @@ function openLeakedNoticeModal(autoLaunched = false) {
     sfx.playAlertChime();
   }
 
-  if (autoLaunched) {
-    showToast('🚨 Alert: 2083 2nd Sem Leaked Papers & Predictions Loaded!');
-  } else {
-    showToast('Opened 2083 Leaked Question Papers Notice');
-  }
+  showToast('🐶 Caught you looking for leaked question papers!');
 }
 
 function closeLeakedNoticeModal() {
@@ -1687,32 +1679,10 @@ function closeLeakedNoticeModal() {
   if (sfx) sfx.playHapticTap();
 }
 
-function handleLeakedOpenSubject(subjId) {
-  closeLeakedNoticeModal();
-  if (sfx) sfx.playHapticTap();
-
-  // Find subject card in DOM
-  const slot = document.querySelector(`.subject-slot[data-id="${subjId}"]`);
-  if (slot) {
-    slot.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    slot.classList.remove('leaked-target-highlight');
-    void slot.offsetWidth;
-    slot.classList.add('leaked-target-highlight');
-  }
-
-  // Open the PDF viewer
-  const subj = SUBJECTS_DATA.find(s => s.id === subjId);
-  if (subj) {
-    setTimeout(() => {
-      openPdfModal(subj.solutionsPdf, `${subj.title} — Master Solutions`);
-    }, 450);
-  }
-}
-
-function handleLeakedExploreAll() {
+function handleMemeGoStudy() {
   closeLeakedNoticeModal();
   if (sfx) sfx.playHapticPop();
-  
+
   const grid = document.getElementById('subject-grid');
   if (grid) {
     grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1722,10 +1692,10 @@ function handleLeakedExploreAll() {
       slot.classList.add('leaked-target-highlight');
     });
   }
-  showToast('🔥 Displaying all 6 subject master solutions');
+  showToast('📚 Smart choice! Opening verified master solutions.');
 }
 
-function handleLeakedGoToTimers() {
+function handleMemeGoTimers() {
   closeLeakedNoticeModal();
   if (sfx) sfx.playHapticTap();
 

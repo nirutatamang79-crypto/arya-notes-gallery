@@ -2249,51 +2249,122 @@ button {
   border-top: 1px dashed var(--border-light);
 }
 
-/* Leaked Modal Footer */
-.leaked-modal-footer-box {
+/* ==============================================================================
+   Suspicious Side-Eye Dog Meme Modal Styles
+   ============================================================================== */
+
+.meme-dialog {
+  max-width: 540px !important;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(239, 68, 68, 0.45) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 35px rgba(239, 68, 68, 0.25) !important;
+}
+
+.meme-modal-body {
+  padding: 1.5rem !important;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-medium);
+  text-align: center;
+  gap: 1.15rem;
+}
+
+.meme-gif-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
   border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid rgba(239, 68, 68, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme-dog-gif {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.meme-gif-wrapper:hover .meme-dog-gif {
+  transform: scale(1.02);
+}
+
+.meme-scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ef4444, transparent);
+  box-shadow: 0 0 10px #ef4444;
+  animation: meme-scan-anim 2.5s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes meme-scan-anim {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.meme-caption-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0 0.5rem;
+}
+
+.meme-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ef4444;
+  letter-spacing: 0.02em;
+}
+
+.meme-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.meme-subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  background: var(--bg-surface);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-medium);
+}
+
+.meme-actions-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.65rem;
   margin-top: 0.25rem;
 }
 
-.leaked-footer-left {
-  flex: 1;
-  min-width: 200px;
-}
-
-.leaked-footer-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Highlighting animation when jumping to a subject */
-.subject-slot.leaked-target-highlight {
-  animation: target-highlight-pulse 2.2s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-@keyframes target-highlight-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-    border-color: #ef4444;
-  }
-  30% {
-    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.25);
-    border-color: #ef4444;
-  }
-  70% {
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
-  }
-  100% {
-    box-shadow: none;
-  }
+.meme-actions-row .btn-pill {
+  width: 100%;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
 }
 
 
