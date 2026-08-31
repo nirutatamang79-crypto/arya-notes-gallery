@@ -1,77 +1,78 @@
 /**
- * IOE Tribhuvan University — BE Computer Engineering (BCT)
- * 3rd Semester (II/I New Course Regular) Exam Countdown Timer Engine
- * Exams occur exactly 24 hours after each 2nd Semester Exam.
- * Timezone: Asia/Kathmandu (NPT, UTC+5:45) · Start Time: 1:00 PM NPT
+ * IOE Tribhuvan University — BE Computer Engineering (BCT / BCI)
+ * 3rd Semester Exam Countdown Timer Engine
+ * Source: IOE Examination Control Division — 2083 Bhadra Revised Schedule (2083-05-15)
+ * Exam Start Time: 1:00 PM NPT (Timezone: Asia/Kathmandu, UTC+5:45)
  */
 
-// BCT 3rd Semester (II/I) Master Exam Schedule (24 Hours after 2nd Semester)
+// BCT 3rd Semester Master Exam Schedule
+// Subjects from official IOE 2083 Bhadra BCI routine image
 const SEM3_EXAM_SCHEDULE = [
   {
-    id: 'ensh201',
-    code: 'ENSH 201',
-    name: 'Engineering Mathematics III',
+    id: 'enex254',
+    code: 'ENEX 254',
+    name: 'Electromagnetics',
     dateBS: '2083-05-24',
     dateAD: 'September 9, 2026',
     targetDateStr: '2026-09-09T13:00:00+05:45',
     endDateStr: '2026-09-09T16:00:00+05:45',
     accent: '#8b5cf6',
-    desc: 'Complex Variables, Numerical Methods, Fourier & Z-Transforms, Linear Programming'
+    desc: 'Maxwell\'s Equations, EM Wave Propagation, Transmission Lines, Waveguides & Antennas'
   },
   {
-    id: 'enex201',
-    code: 'ENEX 201',
-    name: 'Electronic Devices & Circuits II',
+    id: 'enct254',
+    code: 'ENCT 254',
+    name: 'Operating System',
     dateBS: '2083-05-28',
     dateAD: 'September 13, 2026',
     targetDateStr: '2026-09-13T13:00:00+05:45',
     endDateStr: '2026-09-13T16:00:00+05:45',
     accent: '#0284c7',
-    desc: 'High-Frequency Models, Differential Amplifiers, Feedback, Oscillators & Waveguides'
+    desc: 'Process Management, Scheduling, Memory Management, File Systems, I/O & Synchronization'
   },
   {
-    id: 'enct201',
-    code: 'ENCT 201',
-    name: 'Data Structures & Algorithms (DSA)',
+    id: 'enct252',
+    code: 'ENCT 252',
+    name: 'Data Structure & Algorithm',
     dateBS: '2083-06-01',
     dateAD: 'September 17, 2026',
     targetDateStr: '2026-09-17T13:00:00+05:45',
     endDateStr: '2026-09-17T16:00:00+05:45',
     accent: '#10b981',
-    desc: 'Stacks, Queues, Trees, AVL, Graphs, Hashing, Sorting & Algorithm Complexity'
+    desc: 'Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hashing, Sorting & Searching'
   },
   {
-    id: 'enct202',
-    code: 'ENCT 202',
-    name: 'Discrete Structure',
+    id: 'ensh252',
+    code: 'ENSH 252',
+    name: 'Numerical Methods',
     dateBS: '2083-06-05',
     dateAD: 'September 21, 2026',
     targetDateStr: '2026-09-21T13:00:00+05:45',
     endDateStr: '2026-09-21T16:00:00+05:45',
     accent: '#ec4899',
-    desc: 'Propositional Logic, Proof Methods, Relations, Graph Theory, Combinatorics & Trees'
+    desc: 'Root Finding, Interpolation, Numerical Differentiation & Integration, ODE Solutions'
   },
   {
-    id: 'enex202',
-    code: 'ENEX 202',
-    name: 'Microprocessors & Assembly Language',
+    id: 'enct253',
+    code: 'ENCT 253',
+    name: 'Data Communication',
     dateBS: '2083-06-09',
     dateAD: 'September 25, 2026',
     targetDateStr: '2026-09-25T13:00:00+05:45',
     endDateStr: '2026-09-25T16:00:00+05:45',
     accent: '#f59e0b',
-    desc: '8085/8086 Architecture, Assembly Programming, Interrupts, 8255 PPI & Memory Interfacing'
+    desc: 'Data Encoding, Transmission Media, Multiplexing, Error Detection, Protocols & Switching'
   },
   {
-    id: 'enee201',
-    code: 'ENEE 201',
-    name: 'Electrical Engineering Technology',
+    id: 'enex252',
+    code: 'ENEX 252',
+    name: 'Instrumentation & Sensors',
     dateBS: '2083-06-13',
     dateAD: 'September 29, 2026',
     targetDateStr: '2026-09-29T13:00:00+05:45',
     endDateStr: '2026-09-29T16:00:00+05:45',
     accent: '#06b6d4',
-    desc: 'Sensors, Transducers, Signal Conditioning, Analog & Digital Instrumentation Systems'
+    desc: 'Sensors, Transducers, Signal Conditioning, DAQ Systems, Measurement & Calibration'
   }
 ];
 
