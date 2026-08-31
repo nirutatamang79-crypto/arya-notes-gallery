@@ -66,6 +66,9 @@ def parse_log_line(line, req_id):
     elif path in ["/solutions/web_app/", "/solutions/web_app/index.html", "/"]:
         category = "PAGE_VIEW"
         subject = "Web Portal Page"
+    elif path.startswith("/sem3"):
+        category = "PAGE_VIEW"
+        subject = "3rd Sem Countdown"
     elif status == 404:
         category = "ERROR"
         subject = "Missing Resource"

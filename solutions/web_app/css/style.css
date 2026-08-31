@@ -2029,6 +2029,35 @@ button {
   }
 }
 
+.sem3-header-btn {
+  background: rgba(139, 92, 246, 0.1) !important;
+  color: #8b5cf6 !important;
+  border-color: rgba(139, 92, 246, 0.35) !important;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sem3-header-btn:hover {
+  background: #8b5cf6 !important;
+  color: #ffffff !important;
+  border-color: #8b5cf6 !important;
+  transform: translateY(-1px);
+}
+
+.sem3-switcher-btn {
+  background: rgba(139, 92, 246, 0.12) !important;
+  color: #8b5cf6 !important;
+  border-color: rgba(139, 92, 246, 0.35) !important;
+}
+
+.sem3-switcher-btn:hover {
+  background: #8b5cf6 !important;
+  color: #ffffff !important;
+  border-color: #8b5cf6 !important;
+}
+
 .leaked-header-btn {
   background: rgba(239, 68, 68, 0.1) !important;
   color: #ef4444 !important;

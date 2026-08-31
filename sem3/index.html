@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>BCT 3rd Semester Exam Countdown | IOE Tribhuvan University</title>
+  <meta name="description" content="Precision countdown timer and schedule for IOE BE Computer Engineering 3rd Semester (II/I New Course) 2083 Bhadra examination.">
+  
+  <link rel="stylesheet" href="style.css?v=20830515_v1">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    
+    <!-- Top Header Navigation Bar -->
+    <header class="header-bar">
+      <div class="brand-block">
+        <div class="brand-title-row">
+          <h1 class="brand-title">IOE BCT 3rd Semester Countdown</h1>
+          <span class="sem-tag mono">YEAR II / PART I</span>
+        </div>
+        <p class="brand-subtitle mono">2083 Bhadra Examination Schedule · Starts 24 Hours after 2nd Sem (1:00 PM NPT)</p>
+      </div>
+
+      <div class="header-controls">
+        <!-- Live NPT Clock -->
+        <span class="live-clock-pill mono" id="live-clock">--:--:-- NPT</span>
+
+        <!-- Return to 2nd Semester Notes Portal -->
+        <a href="/solutions/web_app/" class="btn-pill highlight-btn mono" title="Return to 2nd Semester Notes Gallery">
+          <span>← 2ND SEM NOTES</span>
+        </a>
+
+        <!-- Analytics / Inspector -->
+        <a href="/analytics/" class="btn-pill mono" target="_blank" title="Open Live Traffic & Analytics Inspector">
+          <span>INSPECTOR ↗</span>
+        </a>
+
+        <!-- Export .ics Calendar -->
+        <button class="btn-pill mono" onclick="exportCalendarICS()" title="Export all 6 exam dates to Apple / Google Calendar">
+          <span>📅 EXPORT .ICS</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="btn-pill mono" onclick="toggleTheme()" title="Toggle Dark/Light Mode (T)">
+          <span id="theme-toggle-text">DARK</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 24-Hour Notice Alert Banner -->
+    <div class="notice-banner">
+      <div class="notice-content">
+        <div class="notice-icon">⏱️</div>
+        <div>
+          <h3 class="notice-title">3RD SEMESTER EXAM TIMELINE PROTOCOL</h3>
+          <p class="notice-desc">
+            All 3rd Semester (II/I) theory examinations start <strong>exactly 24 hours after each 2nd Semester exam</strong> at <strong>1:00 PM NPT</strong>.
+          </p>
+        </div>
+      </div>
+      <div>
+        <a href="/solutions/web_app/#exam-timer-section" class="btn-pill mono" style="font-size: 0.75rem;">
+          <span>VIEW 2ND SEM SCHEDULE ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Spotlight Section (Next Upcoming 3rd Sem Exam) -->
+    <section class="hero-spotlight" id="hero-spotlight">
+      <div class="hero-top-row">
+        <span class="hero-status-pill mono">
+          <span class="pulse-dot"></span>
+          NEXT UPCOMING 3RD SEM TARGET
+        </span>
+        <button class="btn-pill mono" onclick="openZenMode()">
+          <span>ZEN FOCUS</span>
+        </button>
+      </div>
+
+      <div class="hero-subject-block">
+        <span class="hero-code mono" id="hero-code">ENSH 201</span>
+        <h2 class="hero-title" id="hero-title">Engineering Mathematics III</h2>
+        <p class="hero-dates mono" id="hero-dates">2083-05-24 B.S. · September 9, 2026 · 1:00 PM NPT</p>
+      </div>
+
+      <!-- Large Digits Grid -->
+      <div class="hero-timer-grid mono">
+        <div class="hero-unit-card">
+          <span class="hero-unit-val" id="hero-days">00</span>
+          <span class="hero-unit-lbl">DAYS</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-val" id="hero-hours">00</span>
+          <span class="hero-unit-lbl">HOURS</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-val" id="hero-mins">00</span>
+          <span class="hero-unit-lbl">MINS</span>
+        </div>
+        <div class="hero-unit-card">
+          <span class="hero-unit-val" id="hero-secs">00</span>
+          <span class="hero-unit-lbl">SECS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>All 6 Subject Exam Timers</h2>
+          <p class="mono">IOE BE Computer Engineering (BCT) II/I Examination Schedule</p>
+        </div>
+
+        <div class="view-selector">
+          <button class="btn-pill active mono" id="btn-view-cards" onclick="setTimerView('cards')">CARDS</button>
+          <button class="btn-pill mono" id="btn-view-table" onclick="setTimerView('table')">TABLE</button>
+          <button class="btn-pill mono" id="btn-view-timeline" onclick="setTimerView('timeline')">TIMELINE</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Schedule Container -->
+      <div id="schedule-view-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+      <p>Arya's Notes Gallery · IOE BCT 3rd Semester (II/I) Exam Countdown · Tribhuvan University</p>
+      <p class="mono" style="margin-top: 0.35rem; font-size: 0.75rem;">
+        <a href="/solutions/web_app/" style="color: var(--accent-primary); text-decoration: underline;">← Switch to 2nd Sem Portal</a> · 
+        <a href="/analytics/" target="_blank" style="color: var(--text-muted); text-decoration: underline;">Server Traffic Analytics ↗</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Zen Mode Fullscreen Modal -->
+  <div class="zen-overlay" id="zen-overlay">
+    <button class="zen-exit-btn mono" onclick="closeZenMode()">EXIT ZEN (ESC)</button>
+    <div class="zen-content">
+      <span class="zen-code mono" id="zen-code">ENSH 201</span>
+      <h2 class="zen-title" id="zen-title">Engineering Mathematics III</h2>
+      <p class="zen-date mono" id="zen-date">September 9, 2026 · 1:00 PM NPT</p>
+
+      <div class="zen-timer-grid mono">
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-days">00</span>
+          <span class="zen-lbl">DAYS</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-hours">00</span>
+          <span class="zen-lbl">HOURS</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-mins">00</span>
+          <span class="zen-lbl">MINUTES</span>
+        </div>
+        <div class="zen-unit">
+          <span class="zen-val" id="zen-secs">00</span>
+          <span class="zen-lbl">SECONDS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js?v=20830515_v1"></script>
+</body>
+</html>
