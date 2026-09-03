@@ -93,17 +93,17 @@ const SUBJECTS_DATA = [
   }
 ];
 
-// BCT 2083 Exam Schedule (1:00 PM NPT, Asia/Kathmandu, UTC+5:45) - Revised as of 2083-05-15
+// BCT 2083 Exam Schedule (1:00 PM NPT, Asia/Kathmandu, UTC+5:45) - Revised as of 2083-06-01
 const EXAM_SCHEDULE = [
   {
     id: 'ensh151',
     subjectId: 'math',
     code: 'ENSH 151',
     name: 'Engineering Mathematics II',
-    dateBS: '2083-05-23',
-    dateAD: 'September 8, 2026',
-    targetDateStr: '2026-09-08T13:00:00+05:45',
-    endDateStr: '2026-09-08T16:00:00+05:45',
+    dateBS: '2083-05-31',
+    dateAD: 'September 16, 2026',
+    targetDateStr: '2026-09-16T13:00:00+05:45',
+    endDateStr: '2026-09-16T16:00:00+05:45',
     accent: 'var(--accent-math)',
     accentHex: '#7c3aed'
   },
@@ -112,10 +112,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'edc',
     code: 'ENEX 151',
     name: 'Electronic Device & Circuit',
-    dateBS: '2083-05-27',
-    dateAD: 'September 12, 2026',
-    targetDateStr: '2026-09-12T13:00:00+05:45',
-    endDateStr: '2026-09-12T16:00:00+05:45',
+    dateBS: '2083-06-04',
+    dateAD: 'September 20, 2026',
+    targetDateStr: '2026-09-20T13:00:00+05:45',
+    endDateStr: '2026-09-20T16:00:00+05:45',
     accent: 'var(--accent-edc)',
     accentHex: '#0284c7'
   },
@@ -124,10 +124,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'chem',
     code: 'ENSH 153',
     name: 'Engineering Chemistry',
-    dateBS: '2083-05-31',
-    dateAD: 'September 16, 2026',
-    targetDateStr: '2026-09-16T13:00:00+05:45',
-    endDateStr: '2026-09-16T16:00:00+05:45',
+    dateBS: '2083-06-08',
+    dateAD: 'September 24, 2026',
+    targetDateStr: '2026-09-24T13:00:00+05:45',
+    endDateStr: '2026-09-24T16:00:00+05:45',
     accent: 'var(--accent-chem)',
     accentHex: '#0d9488'
   },
@@ -136,10 +136,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'oop',
     code: 'ENCT 151',
     name: 'Object Oriented Programming',
-    dateBS: '2083-06-04',
-    dateAD: 'September 20, 2026',
-    targetDateStr: '2026-09-20T13:00:00+05:45',
-    endDateStr: '2026-09-20T16:00:00+05:45',
+    dateBS: '2083-06-12',
+    dateAD: 'September 28, 2026',
+    targetDateStr: '2026-09-28T13:00:00+05:45',
+    endDateStr: '2026-09-28T16:00:00+05:45',
     accent: 'var(--accent-oop)',
     accentHex: '#e11d48'
   },
@@ -148,10 +148,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'dl',
     code: 'ENEX 152',
     name: 'Digital Logics',
-    dateBS: '2083-06-08',
-    dateAD: 'September 24, 2026',
-    targetDateStr: '2026-09-24T13:00:00+05:45',
-    endDateStr: '2026-09-24T16:00:00+05:45',
+    dateBS: '2083-06-16',
+    dateAD: 'October 2, 2026',
+    targetDateStr: '2026-10-02T13:00:00+05:45',
+    endDateStr: '2026-10-02T16:00:00+05:45',
     accent: 'var(--accent-dl)',
     accentHex: '#059669'
   },
@@ -160,10 +160,10 @@ const EXAM_SCHEDULE = [
     subjectId: 'ecm',
     code: 'ENEE 154',
     name: 'Electrical Circuit & Machines',
-    dateBS: '2083-06-12',
-    dateAD: 'September 28, 2026',
-    targetDateStr: '2026-09-28T13:00:00+05:45',
-    endDateStr: '2026-09-28T16:00:00+05:45',
+    dateBS: '2083-06-20',
+    dateAD: 'October 6, 2026',
+    targetDateStr: '2026-10-06T13:00:00+05:45',
+    endDateStr: '2026-10-06T16:00:00+05:45',
     accent: 'var(--accent-ecm)',
     accentHex: '#d97706'
   }
