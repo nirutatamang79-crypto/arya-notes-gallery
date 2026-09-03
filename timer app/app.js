@@ -2,7 +2,7 @@
  * Minimalist BCT Exam Countdown Timer Engine
  * Computes live countdowns, handles views, theme switching, zen mode, and calendar exports.
  * All exams start at 1:00 PM Nepal Time (Asia/Kathmandu, UTC+5:45).
- * Revised Schedule as of 2083-05-15 (IOE Notice).
+ * Revised Schedule as of 2083-06-01 (IOE Notice).
  */
 
 // Schedule Data Definition (6 Theory Subjects - Revised 2083 Bhadra Schedule)
@@ -11,10 +11,10 @@ const EXAM_SCHEDULE = [
     id: 'ensh151',
     code: 'ENSH 151',
     name: 'Engineering Mathematics II',
-    dateBS: '2083-05-23',
-    dateAD: 'September 8, 2026',
-    targetDateStr: '2026-09-08T13:00:00+05:45',
-    endDateStr: '2026-09-08T16:00:00+05:45',
+    dateBS: '2083-05-31',
+    dateAD: 'September 16, 2026',
+    targetDateStr: '2026-09-16T13:00:00+05:45',
+    endDateStr: '2026-09-16T16:00:00+05:45',
     durationHours: 3,
     description: 'Calculus, Ordinary Differential Equations, Linear Algebra & Vectors'
   },
@@ -22,10 +22,10 @@ const EXAM_SCHEDULE = [
     id: 'enex151',
     code: 'ENEX 151',
     name: 'Electronic Device & Circuit',
-    dateBS: '2083-05-27',
-    dateAD: 'September 12, 2026',
-    targetDateStr: '2026-09-12T13:00:00+05:45',
-    endDateStr: '2026-09-12T16:00:00+05:45',
+    dateBS: '2083-06-04',
+    dateAD: 'September 20, 2026',
+    targetDateStr: '2026-09-20T13:00:00+05:45',
+    endDateStr: '2026-09-20T16:00:00+05:45',
     durationHours: 3,
     description: 'Semiconductor Diodes, BJT, FET, Op-Amps & Amplifier Circuits'
   },
@@ -33,10 +33,10 @@ const EXAM_SCHEDULE = [
     id: 'ensh153',
     code: 'ENSH 153',
     name: 'Engineering Chemistry',
-    dateBS: '2083-05-31',
-    dateAD: 'September 16, 2026',
-    targetDateStr: '2026-09-16T13:00:00+05:45',
-    endDateStr: '2026-09-16T16:00:00+05:45',
+    dateBS: '2083-06-08',
+    dateAD: 'September 24, 2026',
+    targetDateStr: '2026-09-24T13:00:00+05:45',
+    endDateStr: '2026-09-24T16:00:00+05:45',
     durationHours: 3,
     description: 'Electrochemistry, Polymers, Water Technology & Engineering Materials'
   },
@@ -44,10 +44,10 @@ const EXAM_SCHEDULE = [
     id: 'enct151',
     code: 'ENCT 151',
     name: 'Object Oriented Programming',
-    dateBS: '2083-06-04',
-    dateAD: 'September 20, 2026',
-    targetDateStr: '2026-09-20T13:00:00+05:45',
-    endDateStr: '2026-09-20T16:00:00+05:45',
+    dateBS: '2083-06-12',
+    dateAD: 'September 28, 2026',
+    targetDateStr: '2026-09-28T13:00:00+05:45',
+    endDateStr: '2026-09-28T16:00:00+05:45',
     durationHours: 3,
     description: 'C++ Concepts, Classes & Objects, Inheritance, Polymorphism & Templates'
   },
@@ -55,10 +55,10 @@ const EXAM_SCHEDULE = [
     id: 'enex152',
     code: 'ENEX 152',
     name: 'Digital Logics',
-    dateBS: '2083-06-08',
-    dateAD: 'September 24, 2026',
-    targetDateStr: '2026-09-24T13:00:00+05:45',
-    endDateStr: '2026-09-24T16:00:00+05:45',
+    dateBS: '2083-06-16',
+    dateAD: 'October 2, 2026',
+    targetDateStr: '2026-10-02T13:00:00+05:45',
+    endDateStr: '2026-10-02T16:00:00+05:45',
     durationHours: 3,
     description: 'Boolean Algebra, Combinational Logic, Sequential Circuits, Counters & Registers'
   },
@@ -66,10 +66,10 @@ const EXAM_SCHEDULE = [
     id: 'enee154',
     code: 'ENEE 154',
     name: 'Electrical Circuit & Machines',
-    dateBS: '2083-06-12',
-    dateAD: 'September 28, 2026',
-    targetDateStr: '2026-09-28T13:00:00+05:45',
-    endDateStr: '2026-09-28T16:00:00+05:45',
+    dateBS: '2083-06-20',
+    dateAD: 'October 6, 2026',
+    targetDateStr: '2026-10-06T13:00:00+05:45',
+    endDateStr: '2026-10-06T16:00:00+05:45',
     durationHours: 3,
     description: 'Network Theorems, AC Circuits, Transformers, DC & AC Machines'
   }
