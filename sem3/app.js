@@ -1,11 +1,11 @@
 /**
  * IOE Tribhuvan University — BE Computer Engineering (BCT / BCI)
- * 3rd Semester Exam Countdown Timer Engine
+ * 4th Semester Exam Countdown Timer Engine
  * Source: IOE Examination Control Division — 2083 Bhadra Revised Schedule (2083-05-15)
  * Exam Start Time: 1:00 PM NPT (Timezone: Asia/Kathmandu, UTC+5:45)
  */
 
-// BCT 3rd Semester Master Exam Schedule
+// BCT 4th Semester Master Exam Schedule
 // Subjects from official IOE 2083 Bhadra BCI routine image
 const SEM3_EXAM_SCHEDULE = [
   {
@@ -159,7 +159,7 @@ function updateTimerUI() {
 
   if (heroCode) heroCode.innerText = nextExam.code;
   if (heroTitle) heroTitle.innerText = nextExam.name;
-  if (heroDates) heroDates.innerText = `${nextExam.dateBS} B.S. · ${nextExam.dateAD} · 1:00 PM NPT (24h after Sem 2)`;
+  if (heroDates) heroDates.innerText = `${nextExam.dateBS} B.S. · ${nextExam.dateAD} · 1:00 PM NPT`;
   if (heroDays) heroDays.innerText = padZero(heroT.days);
   if (heroHours) heroHours.innerText = padZero(heroT.hours);
   if (heroMins) heroMins.innerText = padZero(heroT.minutes);
@@ -266,7 +266,7 @@ function setTimerView(view) {
                 </div>
 
                 <div class="sched-card-footer">
-                  <span class="mono" style="font-size:0.72rem; color:var(--text-muted);">1:00 PM NPT (+24h)</span>
+                  <span class="mono" style="font-size:0.72rem; color:var(--text-muted);">1:00 PM – 4:00 PM NPT</span>
                   <button class="btn-pill mono" onclick="openZenMode('${exam.id}')">ZEN FOCUS</button>
                 </div>
               </div>
@@ -400,10 +400,10 @@ function exportCalendarICS() {
   let icsLines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Aryas Notes Gallery//BCT 3rd Sem Exam Schedule 2083//EN',
+    'PRODID:-//Aryas Notes Gallery//BCT 4th Sem Exam Schedule 2083//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
-    'X-WR-CALNAME:IOE BCT 3rd Semester Exam Schedule 2083',
+    'X-WR-CALNAME:IOE BCT 4th Semester Exam Schedule 2083',
     'X-WR-TIMEZONE:Asia/Kathmandu'
   ];
 
@@ -418,8 +418,8 @@ function exportCalendarICS() {
       `DTSTAMP:${formatICSDate(new Date())}`,
       `DTSTART:${formatICSDate(startDt)}`,
       `DTEND:${formatICSDate(endDt)}`,
-      `SUMMARY:IOE 3rd Sem Exam: ${exam.code} - ${exam.name}`,
-      `DESCRIPTION:Tribhuvan University IOE BCT 3rd Sem Exam.\\nDate: ${exam.dateBS} B.S. (${exam.dateAD})\\nTime: 1:00 PM - 4:00 PM NPT`,
+      `SUMMARY:IOE 4th Sem Exam: ${exam.code} - ${exam.name}`,
+      `DESCRIPTION:Tribhuvan University IOE BCT 4th Sem Exam.\\nDate: ${exam.dateBS} B.S. (${exam.dateAD})\\nTime: 1:00 PM - 4:00 PM NPT`,
       'LOCATION:IOE Examination Hall',
       'STATUS:CONFIRMED',
       'BEGIN:VALARM',
@@ -437,7 +437,7 @@ function exportCalendarICS() {
   const downloadUrl = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = downloadUrl;
-  link.setAttribute('download', 'IOE_BCT_3rd_Semester_Exam_Schedule_2083.ics');
+  link.setAttribute('download', 'IOE_BCT_4th_Semester_Exam_Schedule_2083.ics');
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

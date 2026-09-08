@@ -68,7 +68,7 @@ def parse_log_line(line, req_id):
         subject = "Web Portal Page"
     elif path.startswith("/sem3"):
         category = "PAGE_VIEW"
-        subject = "3rd Sem Countdown"
+        subject = "4th Sem Countdown"
     elif status == 404:
         category = "ERROR"
         subject = "Missing Resource"
@@ -335,18 +335,25 @@ class CustomHandler(SimpleHTTPRequestHandler):
 
         # Handle Review Submission: POST /api/reviews
         if path == "/api/reviews":
-            content_length = int(self.headers.get('Content-Length', 0))
+            try:
+                content_length = int(self.headers.get('Content-Length', 0))
+            except ValueError:
+                self.send_error(400, "Invalid Content-Length")
+                return
+            if content_length > 16 * 1024:
+                self.send_error(413, "Request body is too large")
+                return
             post_data = self.rfile.read(content_length)
 
             try:
                 data = json.loads(post_data.decode('utf-8'))
-                name = data.get("name", "").strip() or "Anonymous Student"
-                roll = data.get("roll", "").strip() or "IOE BCT"
-                subject = data.get("subject", "").strip() or "General Gallery"
+                name = data.get("name", "").strip()[:40] or "Anonymous Student"
+                roll = data.get("roll", "").strip()[:20] or "IOE BCT"
+                subject = data.get("subject", "").strip()[:80] or "General Gallery"
                 rating = int(data.get("rating", 5))
                 rating = max(1, min(5, rating))
                 tag = data.get("tag", "").strip() or "⚡ Life Saver"
-                comment = data.get("comment", "").strip()
+                comment = data.get("comment", "").strip()[:500]
 
                 if not comment:
                     self.send_response(400)
@@ -394,13 +401,20 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 data = json.loads(post_data.decode('utf-8'))
                 rev_id = data.get("id")
                 reviews = get_all_reviews()
-                updated_likes = 0
+                updated_likes = None
 
                 for r in reviews:
                     if r["id"] == rev_id:
                         r["likes"] = r.get("likes", 0) + 1
                         updated_likes = r["likes"]
                         break
+
+                if updated_likes is None:
+                    self.send_response(404)
+                    self.send_header("Content-Type", "application/json")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"error": "Review not found"}).encode("utf-8"))
+                    return
 
                 save_all_reviews(reviews)
 

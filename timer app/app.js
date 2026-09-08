@@ -1,5 +1,5 @@
 /**
- * Minimalist BCT Exam Countdown Timer Engine
+ * Minimalist BCT 4th Semester Exam Countdown Timer Engine
  * Computes live countdowns, handles views, theme switching, zen mode, and calendar exports.
  * All exams start at 1:00 PM Nepal Time (Asia/Kathmandu, UTC+5:45).
  * Revised Schedule as of 2083-06-01 (IOE Notice).
@@ -21,7 +21,7 @@ const EXAM_SCHEDULE = [
   {
     id: 'enex151',
     code: 'ENEX 151',
-    name: 'Electronic Device & Circuit',
+    name: 'Electronic Devices & Circuits',
     dateBS: '2083-06-04',
     dateAD: 'September 20, 2026',
     targetDateStr: '2026-09-20T13:00:00+05:45',
@@ -54,7 +54,7 @@ const EXAM_SCHEDULE = [
   {
     id: 'enex152',
     code: 'ENEX 152',
-    name: 'Digital Logics',
+    name: 'Digital Logic',
     dateBS: '2083-06-16',
     dateAD: 'October 2, 2026',
     targetDateStr: '2026-10-02T13:00:00+05:45',
@@ -65,7 +65,7 @@ const EXAM_SCHEDULE = [
   {
     id: 'enee154',
     code: 'ENEE 154',
-    name: 'Electrical Circuit & Machines',
+    name: 'Electrical Circuits & Machines',
     dateBS: '2083-06-20',
     dateAD: 'October 6, 2026',
     targetDateStr: '2026-10-06T13:00:00+05:45',
