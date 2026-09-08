@@ -78,7 +78,7 @@ function updateDashboardUI(data) {
   const successEl = document.getElementById('kpi-success-rate');
   const errorsSubEl = document.getElementById('kpi-errors-count');
 
-  if (uniqueEl) uniqueEl.innerText = data.unique_visitors_count || 1;
+  if (uniqueEl) uniqueEl.innerText = data.unique_visitors_count || 0;
   if (totalEl) totalEl.innerText = data.total_requests;
   if (viewsEl) viewsEl.innerText = data.page_views;
   if (downloadsEl) downloadsEl.innerText = data.pdf_downloads;
@@ -90,7 +90,7 @@ function updateDashboardUI(data) {
   if (errorsSubEl) errorsSubEl.innerText = `${errors} error${errors === 1 ? '' : 's'} logged`;
 
   // 2. Unique Visitors Window List
-  renderUniqueVisitors(data.unique_visitors_list || [], data.unique_visitors_count || 1);
+  renderUniqueVisitors(data.unique_visitors_list || [], data.unique_visitors_count || 0);
 
   // 3. Subject Downloads Breakdown
   renderSubjectBreakdown(data.subject_downloads || {}, data.pdf_downloads || 0);

@@ -5,7 +5,7 @@
  * Dynamic Theme Whoosh, and Tactile Haptic Scroll Ticks.
  */
 
-// 6 Subject Materials Data
+// 6 Subject Materials Data — BCT 4th Semester
 const SUBJECTS_DATA = [
   {
     id: "ecm",
@@ -111,7 +111,7 @@ const EXAM_SCHEDULE = [
     id: 'enex151',
     subjectId: 'edc',
     code: 'ENEX 151',
-    name: 'Electronic Device & Circuit',
+    name: 'Electronic Devices & Circuits',
     dateBS: '2083-06-04',
     dateAD: 'September 20, 2026',
     targetDateStr: '2026-09-20T13:00:00+05:45',
@@ -147,7 +147,7 @@ const EXAM_SCHEDULE = [
     id: 'enex152',
     subjectId: 'dl',
     code: 'ENEX 152',
-    name: 'Digital Logics',
+    name: 'Digital Logic',
     dateBS: '2083-06-16',
     dateAD: 'October 2, 2026',
     targetDateStr: '2026-10-02T13:00:00+05:45',
@@ -159,7 +159,7 @@ const EXAM_SCHEDULE = [
     id: 'enee154',
     subjectId: 'ecm',
     code: 'ENEE 154',
-    name: 'Electrical Circuit & Machines',
+    name: 'Electrical Circuits & Machines',
     dateBS: '2083-06-20',
     dateAD: 'October 6, 2026',
     targetDateStr: '2026-10-06T13:00:00+05:45',
@@ -378,7 +378,15 @@ const sfx = new SoundFXEngine();
 // Persistent UI State
 let currentTheme = localStorage.getItem('arya_portal_theme') || 'light';
 let timerViewMode = localStorage.getItem('arya_timer_view') || 'cards';
-let downloadStats = JSON.parse(localStorage.getItem('arya_download_stats') || '{}');
+let downloadStats = {};
+try {
+  const storedDownloadStats = JSON.parse(localStorage.getItem('arya_download_stats') || '{}');
+  if (storedDownloadStats && typeof storedDownloadStats === 'object' && !Array.isArray(storedDownloadStats)) {
+    downloadStats = storedDownloadStats;
+  }
+} catch (error) {
+  console.warn('Ignoring invalid saved download statistics.', error);
+}
 let zenActiveExamId = null;
 
 // Initialize download stats
@@ -1742,4 +1750,3 @@ function setupWaveRippleEffect() {
     triggerWave(e.clientX, e.clientY);
   }, { passive: true });
 }
-
